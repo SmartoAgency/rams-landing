@@ -1,0 +1,19 @@
+
+extends ../layout/main
+block variable
+
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+block content
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

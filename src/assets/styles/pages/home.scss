@@ -1,0 +1,37 @@
+.button-30 {
+  background: var(--color-green);
+  --color: var(--color-white);
+  color: var(--color); 
+  border-radius: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 32px;
+  
+  transition: .25s ease-out;
+  border: none;
+  @include text-style-h-4;
+  text-decoration: none;
+  span {
+      @include text-style-h-4;
+      color: var(--color); 
+      display: inline-block;
+      vertical-align: middle;
+  }
+  &:hover {
+      background-color: var(--color-green);
+  }
+
+  &--red {
+    background: var(--color-red);
+  }
+  svg {
+      stroke: var(--color);
+  }
+  svg:last-child {
+      margin-left: 8px;
+  }
+  svg:first-child {
+      margin-right: 8px;
+  }
+}
