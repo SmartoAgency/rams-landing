@@ -1,11 +1,14 @@
-import LocomotiveScroll from 'locomotive-scroll';
 import i18next from 'i18next';
 import gsap from 'gsap';
 import axios from 'axios';
 import * as yup from 'yup';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import Swiper, { EffectFade, Navigation } from 'swiper';
 import FormMonster from '../../pug/components/form/form';
 import SexyInput from '../../pug/components/input/input';
 
+
+Swiper.use([EffectFade, Navigation]);
 /** ******************************* */
 /*
  * smooth scroll start
@@ -14,14 +17,7 @@ global.gsap = gsap;
 global.axios = axios;
 
 /* eslint-disable-next-line */
-const locoScroll = new LocomotiveScroll({
-  el: document.querySelector('[data-scroll-container]'),
-  smooth: true,
-  smoothMobile: false,
-  inertia: 1.1,
-});
 
-global.locoScroll = locoScroll;
 /*
  * smooth scroll end
  */
@@ -124,20 +120,15 @@ forms.forEach((form) => {
 /*
  * form handlers end
  */
-function disableScroll() {
-  const containersScroll = document.querySelectorAll('[data-disable-page-scroll]');
-  containersScroll.forEach((block) => {
-    block.addEventListener('mouseenter', () => {
-      locoScroll.stop();
-    });
-    block.addEventListener('mouseleave', () => {
-      locoScroll.start();
-    });
-  });
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-  disableScroll();
-  window.locoScroll.update();
+// eslint-disable-next-line no-new
+new Swiper('[data-section-1-slider]', {
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
+  navigation: {
+    nextEl: document.querySelector('[data-section-1-slider-prev]'),
+    prevEl: document.querySelector('[data-section-1-slider-next]'),
+  },
 });
-/** ******************************* */

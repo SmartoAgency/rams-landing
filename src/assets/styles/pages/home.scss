@@ -1,3 +1,7 @@
+@import '../section-1';
+@import '../section-2';
+@import '../section-3';
+
 .button-30 {
   background: var(--color-green);
   --color: var(--color-white);
@@ -10,6 +14,7 @@
   
   transition: .25s ease-out;
   border: none;
+  width: max-content;
   @include text-style-h-4;
   text-decoration: none;
   span {

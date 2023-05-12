@@ -11,7 +11,97 @@ block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
 block content
-
+  section.section-1(data-section-1-slider)
+    .section-1__nav
+      .section-1__nav-arrows
+          <svg data-section-1-slider-prev width="12" height="28" viewBox="0 0 12 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 6L3.41421 12.5858C2.63316 13.3668 2.63317 14.6332 3.41421 15.4142L6 18L10 22" stroke="white" stroke-width="1.5"/>
+            </svg>
+          <svg data-section-1-slider-next width="12" height="28" viewBox="0 0 12 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 6L8.58579 12.5858C9.36684 13.3668 9.36683 14.6332 8.58579 15.4142L6 18L2 22" stroke="white" stroke-width="1.5"/>
+          </svg>
+      .section-1__nav-digits
+        span 1
+        span /
+        span 2
+    .section-1__arrow
+      <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M46.5 65.1786L56.0294 74.5M56.0294 74.5L65.5588 65.1786M56.0294 74.5C56.0294 68.9762 56.0294 56.7548 56.0294 52.0595C56.0294 46.1905 62.0294 45.5 63.4412 45.5C64.5706 45.5 69.6176 45.5 73.5 45.5" stroke="white" stroke-linecap="round"/>
+        <rect x="0.5" y="0.5" width="119" height="119" rx="59.5" stroke="white" stroke-opacity="0.4"/>
+      </svg>
+      span scroll
+    .swiper-wrapper
+      .swiper-slide       
+        +responsiveImage([
+            './assets/images/sec1/sec-1-1.jpg 1920',
+            './assets/images/sec1/sec-1-1@2x.jpg 1240',
+            './assets/images/sec1/sec-1-1@3x.jpg 600'
+          ], 'Альтернативний текст').swiper-slide__img
+        .swiper-slide__gradient
+        .swiper-slide__text 
+          .text-style-h-1.text-white RAMS Garden Bahçelievler'de Bahar Lansmanı Başladı
+          a.button-30(href="#")
+            include ../components/icons/plan.svg
+            span Dai̇re planlari
+      .swiper-slide 
+        +responsiveImage([
+            './assets/images/sec1/sec-1-1.jpg 1920',
+            './assets/images/sec1/sec-1-1@2x.jpg 1240',
+            './assets/images/sec1/sec-1-1@3x.jpg 600'
+          ], 'Альтернативний текст').swiper-slide__img
+        .swiper-slide__gradient
+        .swiper-slide__text 
+          .text-style-h-1.text-white Doğayı Şehirde Yaşatacak Yeni Bir Hayat
+          a.button-30(href="#")
+            include ../components/icons/plan.svg
+            span Dai̇re planlari
+  section.section-2
+    .section-2__left
+      .text-style-h-1.text-black Proje hakkinda
+    .section-2__right
+      .text-gray-body.text-style-h-4 Ulaşabileceğiniz maksimum yeşili ile koruya komşu, tüm ulaşım akslarının merkezinde yer alan 11 blok ve 796 dairesiyle RAMS Garden Bahçelievler, 116 bin metrekarelik geniş bir alanda doğanın ve şehrin birbiriyle buluştuğu konforlu bir yaşam sunuyor.
+      .text-gray-body.text-style-h-4 RAMS Garden Bahçelievler, şehir merkezine yakınlığı ve 42.300 metrekarelik koru ile çevrili benzersiz bir konumda yaşamanın tüm faydalarını bir arada sunmaktadır. Burada şehrin koşuşturmacasından uzaklaşabilir ailenizle birlikte 33.000 metrekarelik peyzaj içerisinde doğanın tadını çıkarabilirsiniz.
+      div
+        .text-style-h-3.text-gray 2023
+        .text-gray-body.text-style-h-4 tesli̇m
+        .section-2-delimiter
+      div
+        .text-style-h-3.text-gray 796
+        .text-gray-body.text-style-h-4 dai̇re sayisi
+        .section-2-delimiter
+      div
+        .text-style-h-3.text-gray 10-13
+        .text-gray-body.text-style-h-4 kat dai̇re sayisi
+        .section-2-delimiter
+      div
+        .text-style-h-3.text-gray 10.000 m²
+        .text-gray-body.text-style-h-4 ti̇cari̇ alan
+        .section-2-delimiter
+      div
+        .text-style-h-3.text-gray 104.72 m² – 307.4 m²
+        .text-gray-body.text-style-h-4 dai̇re alanlari
+      div
+        .text-style-h-3.text-gray 2+1 / 3+1 / 4+1 / 5+1
+        .text-gray-body.text-style-h-4 dai̇re seçenekleri̇
+    +responsiveImage([
+      './assets/images/sec2/sec-2-bg.jpg 1920',
+      './assets/images/sec2/sec-2-bg@2x.jpg 1240',
+      './assets/images/sec2/sec-2-bg@3x.jpg 600'
+    ], 'Альтернативний текст')
+  section.section-3
+    .text-black.text-style-h-1 Bölge
+    a.button-30.button-30--red(href="#") 
+      include ../components/icons/3d.svg
+      span 3D Daire Seçimi
+    .web-item 
+      <svg data-circle-with-hover class="web-item__play-button" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle data-circle-with-hover-default cx="50" cy="50" r="50" style="fill:var(--color-green)"/>
+        <circle data-circle-with-hover-hover cx="50" cy="50" r="50" fill="var(--color-green)"/>
+        <path d="M60.8284 50.4859L46.9055 60.232C46.2427 60.6959 45.332 60.2217 45.332 59.4127L45.332 39.9207C45.332 39.1117 46.2427 38.6375 46.9055 39.1015L60.8284 48.8475C61.3971 49.2456 61.3971 50.0878 60.8284 50.4859Z" fill="var(--color-white)"/>
+        </svg>
+      .web-item__frame
+        img(src="./assets/images/test-build.jpg").web-item__frame-preview
+        iframe(data-src="https://www.youtube.com/embed/DAlzlebbdPo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
 block footer
   include ../includes/footer.pug
 

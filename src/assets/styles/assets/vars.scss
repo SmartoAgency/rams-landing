@@ -25,6 +25,7 @@ $gold: #CFA46E;
   --sliceFigure-big: 541px;
 
   --page-side-fields: 60px;
+  --section-v-offset: 150px;
 }
 
 @media screen and (max-width: 1440px){
@@ -68,6 +69,29 @@ $color-green: rgba(122,144,73,1);
 $color-gray-body: rgba(97,97,97,1);
 $color-red: rgba(211,7,36,1);
 $color-gray-light: rgba(210,210,211,1);
+
+
+.text-white {
+	color: rgba(255,255,255,1);
+}
+.text-gray {
+	color: rgba(63,63,63,1);
+}
+.text-black {
+	color: rgba(28,29,34,1);
+}
+.text-green {
+	color: rgba(122,144,73,1);
+}
+.text-gray-body {
+	color: rgba(97,97,97,1);
+}
+.text-red {
+	color: rgba(211,7,36,1);
+}
+.text-gray-light {
+	color: rgba(210,210,211,1);
+}
 
 
 .text-style-h-1 {

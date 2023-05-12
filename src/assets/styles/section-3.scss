@@ -1,0 +1,8 @@
+@import './components/web-item';
+
+.section-3 {
+    padding-left: var(--page-side-fields);
+    padding-right: var(--page-side-fields);
+    padding-top: var(--section-v-offset);
+    padding-bottom: var(--section-v-offset);
+}
