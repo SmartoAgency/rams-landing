@@ -26,6 +26,8 @@ const importFile = require('gulp-file-include');
 const uglify = require('gulp-uglify-es').default;
 
 //img
+
+var prettyHtml = require('gulp-pretty-html');
 const cache = require('gulp-cache');
 const imagemin = require('gulp-imagemin');
 const imageminJpegRecompress = require('imagemin-jpeg-recompress');
@@ -174,6 +176,9 @@ function clean() {
 function templates() {
 	return gulp.src(paths.templates.pages)
 	.pipe(pug({ pretty: true }))
+	.pipe(prettyHtml({
+		unformatted: ['fieldset'],
+	}))
 	.pipe(gulp.dest(paths.root));
 }
 

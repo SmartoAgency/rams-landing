@@ -32,6 +32,7 @@ global.axios = axios;
  */
 const forms = [
   '[data-home-contact]',
+  '[data-form]',
 ];
 const formsWithRedirect = [
   '[data-popup-form]',
@@ -67,7 +68,7 @@ formsWithRedirect.forEach((form) => {
             defaultMessage: i18next.t('phone'),
             valid: false,
             error: [],
-          },
+          }
         },
 
       },
@@ -110,14 +111,21 @@ forms.forEach((form) => {
             valid: false,
             error: [],
           },
+          agreement: {
+            inputWrapper: new SexyInput({ animation: 'none', $field: $form.querySelector('[data-field-agreement]') }),
+            rule: yup.string().required(i18next.t('required')).nullable(),
+            defaultMessage: i18next.t('agreement'),
+            valid: false,
+            error: [],
+          },
         },
 
       },
     });
 
-    $form.querySelector('.js-mask-absolute').addEventListener('click', () => {
-      $form.querySelector('[name="phone"]').focus();
-    }, false);
+    // $form.querySelector('.js-mask-absolute').addEventListener('click', () => {
+    //   $form.querySelector('[name="phone"]').focus();
+    // }, false);
   }
 });
 
@@ -169,3 +177,56 @@ document.body.addEventListener('change', (evt) => {
     el.closest('label').classList.remove('active');
   });
 });
+
+
+document.body.addEventListener('click',function(evt){
+  const target = evt.target.closest('[data-call-form]');
+  if (!target) return;
+  document.querySelector('[data-form-wrapper]').classList.add('active');
+});
+document.body.addEventListener('click',function(evt){
+  const target = evt.target.closest('[data-close-form]');
+  if (!target) return;
+  document.querySelector('[data-form-wrapper]').classList.remove('active');
+});
+
+
+function screen3Effects() {
+  const swiper = new Swiper('.zoom-slider-wrapper', {
+      // Optional parameters
+  modules: [ Navigation],
+  slidesPerView: 4.5,
+  loop: false,
+  spaceBetween: 40,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1.5,
+      spaceBetween: 20
+    },
+    // when window width is >= 480px
+    993: {
+      slidesPerView: 3.5,
+      spaceBetween: 30
+    },
+    1440: {
+      slidesPerView: 4.5,
+      spaceBetween: 40
+    }
+    // when window width is >= 640px
+  },
+  navigation: {
+    nextEl: document.querySelector('[data-screen3-next]'),
+    prevEl: document.querySelector('[data-screen3-prev]'),
+  },
+});
+  // swiper.on('touchStart', () => {
+  //   document.querySelector('.zoom-slider-wrapper').classList.add('drag')
+
+  // });
+  // swiper.on('touchEnd', () => {
+  //   document.querySelector('.zoom-slider-wrapper').classList.remove('drag')
+  // });
+}
+
+screen3Effects();

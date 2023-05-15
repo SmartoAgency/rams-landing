@@ -1,266 +1,257 @@
-/**********************************/
-/*
-* input start
-*/
-form {
-  --input-padding: 23px;
+.form-wrapper, .form-wrapper-2 {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  background: rgba(31, 32, 38, 0.4);
+  height: 100vh;
   width: 100%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  z-index: 102;
+
+  .form {
+    height: auto;
+    width: 800px;
+    background: $wc;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: center;
+    padding: 20px 5.2vw;
+
+    @include to(1440px) {
+      width: 45%;
+    }
+
+    @include to(1024px) {
+      width: 80%;
+      padding: 0 60px;
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
 }
-.form-label {
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 140%;
-  color: #CFA46E;
+.form-title {
+  text-align: left;
+  margin-bottom: 32px;
+}
+.form-text {
+  margin-top: 8px;
+}
+.form-close  {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  cursor: pointer;
+  z-index: 1000;
+
+  svg {
+    stroke: var(--color-green);
+    height: 24px;
+    width: 24px;
+
+    @include to(1440px) {
+      height: 18px;
+      width: 18px;
+    }
+  }
+}
+.input-title {
+
+  text-align: left;
+  margin-bottom: 8px;
+}
+.submit-btn, .form-thanks-btn {
+  margin-top: 40px;
+  cursor: pointer;
+  border-left: none;
+  border-right: none;
+  width: 360px;
+
   @include to(1440px) {
-    font-size: 16px;
+    width: 310px;
   }
-  @include to(992px) {
-    font-size: 20px;
+}
+
+.form-field-input--checkbox {
+  display: flex;
+  column-gap: 8px;
+  position: relative;
+  margin-bottom: 32px;
+  .form-field__input {
+
+    height: auto !important;
   }
-  @include to(576px) {
-    font-size: 12px;
+  .input-message {
+      position: absolute;
+      top: 100%;
+      left: 0;
+  }
+  a {
+      color: #0d6efd;
+  }
+  input {
+      width: auto;
+      cursor: pointer;
+  }
+  &-subtitle {
+      color: var(--color-gray-body);
   }
 }
 
 .form-field:not(#t) {
   position: relative;
-  margin: 60px 0 0;
-  background: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  margin: 15px 0 0;
+  background: transparent;
   transition: all 0.3s;
-  @include to(1440px){
-    margin: 40px 0 0;
+  width: 100%;
+  
+  &.first-offset {
+    margin: 0;
   }
-  @include to(992px){
-    margin: 50px 0 0;
-  }
-  @include to(576px){
-    margin: 30px 0 0;
-  }
+}
+
+[data-btn-submit] {
+  margin-top: 32px;
 }
 
 [data-animation="focus"] .input-message {
+  
+  
+  color: var(--color-gray);
   position: absolute;
   top: 50%;
-  left: var(--input-padding);
+  left: 0;
   z-index: 3;
-  padding: 0 7px;
   display: flex;
-  font-weight: 500;
-  font-size: 14px;
   transform: translate(0%, -50%);
   user-select: none;
   pointer-events: none;
-  background-color: #8e8e8e;
   transition: all 0.16s cubic-bezier(0.0, 0, 0.2, 1) 0ms;
 }
+textarea.form-field__input {
+  padding-top: 22px;
+  height: 100px;
 
-/*  */
-.form-field-input {
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-  height: 60px;
+  resize: none;
   @include to(1440px) {
-    height: 40px;
-  }
-  @include to(992px) {
-    height: 55px;
-  }
-  @include to(576px) {
-    height: 35px;
+    height: 100px;
+    padding-top: 16px;
   }
 }
 .form-field__input {
+  
+  
+  color: var(--color-gray);
+  text-align: left;
+  height: 60px;
   width: 100%;
-  font-size: 28px;
-  line-height: 120%;
-  background: none;
-  border: none;
-  color: #FFFFFF;
+  background: rgba(113, 167, 0, 0.05);
+  border: 1px solid #F3EFE2;
+  padding-left: 24px;
+  cursor: pointer;
+
   @include to(1440px) {
-    font-size: 20px;
+    height: 48px;
+    padding-left: 16px;
   }
-  @include to(992px) {
-    font-size: 24px;
-    line-height: 140%;
-  }
-  @include to(576px) {
-    font-size: 14px;
-    line-height: 100%;
-  }
+
   &::placeholder {
-    color: #ffffff;
+    
+    
+    color: var(--color-gray-light);
+    text-align: left;
   }
   &:focus + .form-field-message {
     opacity: 1;
   }
 }
-.main-button {
-  margin: 60px 0 0 auto;
+.mask-absolute {
+  
+  
+  color: var(--color-gray);
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  height: 60px;
+  width: 100%;
+  //background: rgba(113, 167, 0, 0.05);
+  //border: 1px solid #F3EFE2;
+  padding-left: 24px;
   display: flex;
   align-items: center;
-  font-family: $default-font;
-  
-  font-size: 28px;
-  line-height: 1em;
-  color: #CFA46E;
-  border: none;
-  background: none;
-  white-space: nowrap;
-  text-decoration: none;
-  @include to(1440px) {
-    margin: 40px 0 0 auto;
-    font-size: 20px;
-    line-height: 1.2em;
-  }
-  @include to(992px) {
-    margin: 50px 0 0 auto;
-    font-size: 28px;
-    line-height: 1em;
-  }
-  @include to(576px) {
-    margin: 30px 0 0 auto;
-    font-size: 14px;
-  }
+  justify-content: flex-start;
+  cursor: pointer;
 
-  &__arrow {
-    display: flex;
-    width: 70px;
-    height: 13px;
-    margin: 0 0 0 50px;
-    svg {
-      height: 100%;
-      fill: #CFA46E;
-    }
-    @include to(1440px) {
-      width: 50px;
-      height: 9px;
-      margin: 0 0 0 20px;
-    }
-    @include to(992px) {
-      margin: 0 0 0 30px;
-    }
-    @include to(576px) {
-      width: 34px;
-      height: 6px;
-      margin: 0 0 0 20px;
-    }
+  @include to(1440px) {
+    height: 48px;
+    padding-left: 16px;
   }
 }
-
-.mask-absolute {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 65px;
-  height: 100%;
-  z-index: 10;
-  background-color: red;
-  opacity: 0;
-  @include to(1440px) {
-    width: 45px;
-  }
-  @include to(576px) {
-    width: 35px;
-  }
-}
-
 [data-animation="focus"] .form-field__input {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  font-weight: 500;
-  font-size: max(vh(16), 16px);
-  color: #000;
-  text-indent: var(--input-padding);
-  background-color: transparent;
-  border: none;
-  @include to(1440px){
-    font-size: 14px;
-  }
 }
-[data-animation="none"] .form-field__input {
-  padding: 0;
-  width: 100%;
-  border: none;
-  font-size: max(vh(16), 16px);
-  @media (-webkit-min-device-pixel-ratio: 2) and (min-width:1440px){
-    font-size: vw(16);
-  }
-  @include to(1440px){
-    font-size: 20px;
-  }
-  @include to(576px){
-    font-size: 14px;
-  }
-}
-
 [data-animation="none"] .input-message {
+  
+  
+  color: var(--color-gray);
+  text-align: right;
   position: absolute;
-  left: 0;
-  bottom: -6px;
+  bottom: 100%;
+  right: 0;
+  left: auto;
   display: flex;
+  justify-content: flex-end;
   width: 100%;
-  min-height: 12px;
-  font-size: max(vh(14), 14px);
-  line-height: 100%;
+  text-transform: none;
   transform: translate(0%, 100%);
-  @include to(1440px) {
-    font-size: 12px;
-  }
-  @include to(576px) {
-    font-size: 10px;
-  }
-
 }
-
-
 [data-field-input][data-status="field--inactive"]:not(#r) {
   .input-message {
-    color: #fff;
+    color: var(--color-gray);
   }
 }
-
 [data-field-input][data-status="field--active"]:not(#r) {
-  border-color: $mc;
   .input-message {
-    color: $mc;
+    color: var(--color-gray);
   }
 }
-
 [data-field-input][data-status="field--error"]:not(#r) {
-  border-color: #EA4041;
   .input-message {
     color: #EA4041;
   }
 }
-
 [data-field-input][data-status="field--success"]:not(#r) {
-  border-color: #96C480;
   .input-message {
     color: #96C480;
   }
 }
-
 .selected:not(#f) .input-message {
   top: 0;
-  font-size: 10px;
+  
+  
+  color: var(--color-gray);
+  text-align: left;
 }
-
-/*
-* input end
-*/
-/**********************************/
-
-
 .requaired-block {
   &-ico {
     width: 25px;
     height: 25px;
-
     svg {
       width: 100%;
       height: 100%;
@@ -277,74 +268,13 @@ form {
       height: 100%;
     }
   }
-
   &__text {
-    font-size: vw(16);
-    line-height: 170%;
+    
+    
+    color: var(--color-gray);
+    text-align: left;
     margin: 0px vw(18);
     white-space: nowrap;
-
-    color: #BBBEC2;
-    @media (-webkit-min-device-pixel-ratio: 2) and (min-width:1440px){
-      font-size: vw(16);
-      line-height: 1.4em;
-
-    }
-    @include to(1440px){
-      font-size: 12px;
-      margin: 0px 15px;
-
-    }
-  }
-}
-
-.form-textarea {
-  position: relative;
-  margin: 82px 0 0 0;
-  @include to(1440px){
-    margin: 40px 0 0 0;
-  }
-  @include to(992px){
-    margin: 50px 0 0 0;
-  }
-  @include to(576px){
-    margin: 30px 0 0 0;
-  }
-  textarea {
-    padding: 0;
-    height: 115px;
-    width: 100%;
-    display: flex;
-    background: none;
-    font-size: 28px;
-    line-height: 100%;
-    color: #FFFFFF;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    @media (-webkit-min-device-pixel-ratio: 2) and (min-width:1440px){
-      font-size: vw(28);
-    }
-    @include to(1440px){
-      height: 73px;
-      font-size: 20px;
-      line-height: 120%;
-    }
-    @include to(992px){
-      height: 134px;
-      font-size: 24px;
-      line-height: 140%;
-    }
-    @include to(576px){
-      height: 74px;
-      font-size: 14px;
-      line-height: 100%;
-    }
-    &::placeholder {
-      color: #ffffff;
-    }
-    &:focus + .form-field-message {
-      opacity: 1;
-    }
   }
 }
 
@@ -352,21 +282,11 @@ form {
   position: absolute;
   top: 0;
   opacity: 0;
-  font-size: 12px;
-  line-height: 120%;
-  color: #828282;
+  
+  
+  color: var(--color-gray);
+  text-align: left;
   transform: translateY(calc(-100% - 10px));
-  //margin: 10px 0 0 0;
-  @media (-webkit-min-device-pixel-ratio: 2) and (min-width:1440px) {
-    font-size: vw(16);
-  }
-  @include to(1440px) {
-    //margin: 10px 0 0 0;
-    font-size: 12px;
-  }
-  @include to(576px){
-    font-size: 14px;
-  }
 }
 
 .requaired-block-ico--position {
@@ -375,3 +295,37 @@ form {
   right: 0;
   pointer-events: none;
 }
+
+.form-thanks-wrapper {
+  opacity: 0;
+  visibility: hidden;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(10, 17, 27, 0.5);
+  transition: opacity 0.5s ease-out, visibility 1ms linear 0.5s;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-out, visibility 1ms linear 0.5s;
+  }
+  .form-thanks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 50%;
+    height: 40%;
+    background: $wc;
+  }
+}
+
+// @import './form-mobile';

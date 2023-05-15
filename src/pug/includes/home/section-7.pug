@@ -1,0 +1,52 @@
+-
+    var sec7 = [
+        {
+            text: "Bisiklet Parkuru",
+            img: './assets/images/sec7/image 3.jpg'
+        },
+        {
+            text: "210 Metre Gölet",
+            img: './assets/images/sec7/image 3-1.jpg',
+        },
+        {
+            text: "Hobi Bahçeleri",
+            img: './assets/images/sec7/image 3-2.jpg',
+        },
+        {
+            text: "Çim Amfi& Açık Hava Sineması",
+            img: './assets/images/sec7/image 3-3.jpg',
+        },
+        {
+            text: "Koru Alanı",
+            img: './assets/images/sec7/image 3-4.jpg',
+        },
+        {
+            text: "Yoga & Feng Shuı Bahçesi",
+            img: './assets/images/sec7/image 3-5.jpg',
+        },
+        {
+            text: "Koşu Parkuru",
+            img: './assets/images/sec7/image 3-6.jpg',
+        },
+        {
+            text: "Oyun Alanları",
+            img: './assets/images/sec7/image 3-7.jpg',
+        },
+        {
+            text: "Palmiye Adası",
+            img: './assets/images/sec7/image 3-8.jpg',
+        }
+    ];
+section.section-7
+    .text-style-h-1.text-black Peyzaj
+    .screen3
+        .zoom-slider-wrapper
+            .zoom-slider.swiper-wrapper
+                each val in sec7 
+                    .slide.swiper-slide
+                        img(src=val.img)
+                        div 
+                            <svg class="swiper-slide__arrow" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.90244 0H6L22.0976 16L6 32H9.90244L26 16L9.90244 0Z" fill="#1C1D22"/>
+                            </svg>
+                            | #{val.text}

@@ -1,12 +1,32 @@
-form(data-home-contact autocomplete="off")
-  .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive")
-    input(type='text' name="name").form-field__input
-    .input-message(data-input-message) Ім’я:*
-  .form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
-    input(type='text' name="phone").form-field__input
-    .input-message(data-input-message) Телефон:*
-  button( type="submit" data-btn-submit).home-content__link.link
-    span(data-btn-submit-text).link__text.usn Надіслати
-    span.link-ico.link-ico--margin
-      span.link-ico__stic.bgc--wc
-      +svg('arrow').link__ico.fill--wc
+.form-wrapper(data-form-wrapper)
+  .form-close(data-close-form)
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M25 25L1 1M1 25L25 1L1 25Z" stroke-width="2"/>
+    </svg>
+  form(data-form autocomplete="off").form
+    .form-title.text-style-h-3.text-black Talep formu:
+    .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive").first-offset
+      .input-title.text-style-h-4.text-gray Adiniz:
+      input(type='text' name="name" placeholder="Metni adiniz").form-field__input
+      .input-message(data-input-message)
+    .form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
+      .input-title.text-style-h-4.text-gray Telefon numaran:
+      input(type='text' name="phone" placeholder="Телефон").form-field__input
+      .input-message(data-input-message)
+    .form-field.disabled.form-field-input(data-field-input data-field-email data-status="field--inactive")
+      .input-title.text-style-h-4.text-gray E-posta:
+      input(type='text' name="email" placeholder="E-posta adresini girin").form-field__input
+      .input-message(data-input-message)
+    .form-field.disabled.form-field-input(data-field-input data-field-comment data-status="field--inactive")
+      .input-title.text-style-h-4.text-gray Mesajın:
+      textarea(type='text' name="comment" placeholder="Metni mesajın").form-field__input.text-input
+      .input-message(data-input-message)
+    .form-field.disabled.form-field-input.form-field-input--checkbox(data-field-input='data-field-input' data-field-agreement='data-field-agreement' data-status='field--inactive')
+      input.form-field__input(type='checkbox' name='agreement')
+      .input-message(data-input-message='data-input-message')
+      .form-field-input--checkbox-subtitle 
+        a(target="_blank" href="https://ramsturkiye.com.tr/tr/kvkk") KVKK metnini okudum. 
+        | İzin veriyorum.
+    button( type="submit" data-btn-submit).button-30
+        include ../icons/chevron-right.svg
+        span(data-btn-submit-text) Talep oluştur
