@@ -1,6 +1,10 @@
 @import '../section-1';
 @import '../section-2';
 @import '../section-3';
+@import '../section-4';
+@import '../section-5';
+@import '../components/bordered-block';
+@import '../components/build-highlighter';
 
 .button-30 {
   background: var(--color-green);
@@ -31,7 +35,7 @@
     background: var(--color-red);
   }
   svg {
-      stroke: var(--color);
+    //   stroke: var(--color);
   }
   svg:last-child {
       margin-left: 8px;

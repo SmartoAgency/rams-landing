@@ -1,0 +1,43 @@
+.section-4 {
+    // padding-left: var(--page-side-fields);
+    padding-right: var(--page-side-fields);
+    padding-bottom: var(--section-v-offset);
+    align-items: center;
+    @include row-flex();
+    &__left {
+        @include size(18);
+        @include shift(0);
+        svg {
+            width: 100%;
+            height: auto;
+        }
+    
+    }
+    &__right {
+        @include size(6);
+        @include shift(0);
+        &>:nth-child(n+2) {
+            margin-top: 20px;
+        }
+    }
+}
+
+
+.genplan-svg {
+    [data-build] {
+        animation: stroke-pulsation 1.6s infinite cubic-bezier(0, 0, 0.12, 1.02);
+    }
+    @keyframes stroke-pulsation {
+        0% {
+          stroke-width: 2;
+        }
+      
+        20% {
+          stroke-width: 6;
+        }
+      
+        100% {
+          stroke-width: 2;
+        }
+      }
+}

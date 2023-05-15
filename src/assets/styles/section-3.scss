@@ -5,4 +5,14 @@
     padding-right: var(--page-side-fields);
     padding-top: var(--section-v-offset);
     padding-bottom: var(--section-v-offset);
+     @include row-flex();
+     &__left {
+            @include size(6);
+            @include shift(0);
+        }
+        &__right {
+            
+            @include size(18);
+            @include shift(0);
+    }
 }

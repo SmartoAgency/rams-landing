@@ -6,6 +6,10 @@ import * as yup from 'yup';
 import Swiper, { EffectFade, Navigation } from 'swiper';
 import FormMonster from '../../pug/components/form/form';
 import SexyInput from '../../pug/components/input/input';
+import { lenis } from './modules/scroll/leniscroll';
+
+
+const scroller = lenis;
 
 
 Swiper.use([EffectFade, Navigation]);
@@ -131,4 +135,37 @@ new Swiper('[data-section-1-slider]', {
     nextEl: document.querySelector('[data-section-1-slider-prev]'),
     prevEl: document.querySelector('[data-section-1-slider-next]'),
   },
+});
+
+// eslint-disable-next-line no-new
+new Swiper('[data-sec-5-slider]', {
+  // effect: 'fade',
+  // fadeEffect: {
+  //   crossFade: true,
+  // },
+  slidesPerView: 1.05,
+  // spaceBetween: 20,
+  navigation: {
+    nextEl: document.querySelector('[data-sec-5-slider-next]'),
+    prevEl: document.querySelector('[data-sec-5-slider-prev]'),
+  },
+});
+
+
+document.body.addEventListener('change', (evt) => {
+  const target = evt.target.closest('[name="genplan"]');
+  if (!target) return;
+  const { value } = target;
+  document.querySelectorAll('[data-build]').forEach((el) => {
+    const regExp = new RegExp(el.dataset.build);
+    el.setAttribute('stroke-opacity', regExp.test(value) ? 1 : 0);
+  });
+
+  document.querySelectorAll('[name="genplan"]').forEach((el) => {
+    if (el === target) {
+      el.closest('label').classList.add('active');
+      return;
+    }
+    el.closest('label').classList.remove('active');
+  });
 });

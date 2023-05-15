@@ -1,0 +1,47 @@
+- 
+    var a = [
+        {
+            title: "Çocuk oyun alanı",
+            text: "İşinize ya da katılmanız gereken önemli bir et kinliğe giderken çocuklarınızı özenle seçilen eğitimcilere emanet edebilirsiniz. Çocuklarınız gözetim altında eğlenceli vakit geçirirken, siz de kendinize vakit ayırabilirsiniz.",
+        },
+        {
+            title: "Toplantı",
+            text:  "Keşke iş yerine giderken hiç trafik olmasa dediğinizi duyar gibiyiz. Biz de tam bu nedenle sizler için evinizden ayrılmadan toplantılarınızı düzenleyebileceğiniz, acilen bir konferansa katılmanız gerektiğinde ise rahatça çalışmanıza olanak veren ortak çalışma odaları tasarladık.",
+        },
+        {
+            title: "Sinema / PS Odası",
+            text:  "Evinizden ayrılmadan misafirlerinizle en sevilen filmlerin izlendiği akşamlara ev sahipliği yapabilir, Playstation turnuvaları ile sevdiklerinizle eğlenceli zamanlar geçirebilirsiniz.",
+        },
+        {
+            title: "Misafir Odası",
+            text:  "RAMS Garden sakinlerinin misafirleri, All In One konsepti dahilindeki misafir odasında konforla konaklayabilecekler.",
+        },
+        {
+            title: "Yoga Salonu",
+            text:  "All In One Konseptiyle Yepyeni Bir Yoga Deneyimi: RAMS Garden projesinde yer alan modern yoga salonumuzda, zihninizi ve bedeninizi yenileyebilirsiniz. Konforlu ve rahatlatıcı atmosferiyle tasarlanan salonumuzda, profesyonel yoga eğitmenlerimiz eşliğinde yoga yapabilir, meditasyon yaparak stresinizi azaltabilirsiniz.",
+        }
+    ]
+section.section-5
+    .section-5__top
+        .text-style-h-1.color-black All in one
+        .big-slider-nav
+            <svg data-sec-5-slider-prev width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.0976 0H26L9.90244 16L26 32H22.0976L6 16L22.0976 0Z" fill="#1C1D22"/>
+                </svg>
+            <svg data-sec-5-slider-next width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.90244 0H6L22.0976 16L6 32H9.90244L26 16L9.90244 0Z" fill="#1C1D22"/>
+                </svg>
+    .big-slider(data-sec-5-slider)
+        .swiper-wrapper
+            each val, index in a
+                .swiper-slide
+                    +responsiveImage([
+                        './assets/images/section5/'+(index+1)+'/allinone1.jpg 1920',
+                        './assets/images/section5/'+(index+1)+'/allinone1@075x.jpg 1240',
+                        './assets/images/section5/'+(index+1)+'/allinone1@05x.jpg 600',
+                        './assets/images/section5/'+(index+1)+'/allinone1@05x.jpg 320',
+                    ], 'All in one' + index).swiper-slide__img
+                    .swiper-slide__text
+                        .text-style-h-3 #{val.title}
+                        .swiper-slide__delimiter
+                        .text-style-h-4.text-gray-body #{val.text}

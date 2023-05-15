@@ -3,12 +3,12 @@
 /* It's principal settings in smart grid project */
 var settings = {
     outputStyle: 'scss', /* less || scss || sass || styl */
-    columns: 12, /* number of grid columns */
+    columns: 24, /* number of grid columns */
     offset: '20px', /* gutter width px || % || rem */
     mobileFirst: false, /* mobileFirst ? 'min-width' : 'max-width' */
     container: {
-        maxWidth: '1360px', /* max-width оn very large screen */
-        fields: '30px' /* side fields */
+        maxWidth: '1920px', /* max-width оn very large screen */
+        fields: 'var(--page-side-fields)' /* side fields */
     },
     breakPoints: {
         lg: {
