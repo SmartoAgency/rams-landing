@@ -98,16 +98,29 @@ forms.forEach((form) => {
  */
 
 // eslint-disable-next-line no-new
-new Swiper('[data-section-1-slider]', {
+const sec1Slider = new Swiper('[data-section-1-slider]', {
   effect: 'fade',
+  loop: true,
+  speed: 500,
   fadeEffect: {
     crossFade: true,
   },
   navigation: {
-    nextEl: document.querySelector('[data-section-1-slider-prev]'),
-    prevEl: document.querySelector('[data-section-1-slider-next]'),
+    nextEl: document.querySelector('[data-section-1-slider-next]'),
+    prevEl: document.querySelector('[data-section-1-slider-prev]'),
   },
+  on: {
+    init: (e) => {
+      document.querySelector('.section-1__nav-digits span:nth-child(3)').textContent = e.slides.length;
+      console.log(e);
+    }
+  }
 });
+
+sec1Slider.on('activeIndexChange',  ({ activeIndex, realIndex }) => {
+  document.querySelector('.section-1__nav-digits span:nth-child(1)')
+    .textContent = realIndex + 1;
+})
 
 // eslint-disable-next-line no-new
 new Swiper('[data-sec-5-slider]', {
@@ -119,6 +132,8 @@ new Swiper('[data-sec-5-slider]', {
     prevEl: document.querySelector('[data-sec-5-slider-prev]'),
   },
 });
+
+
 
 
 // document.body.addEventListener('change', (evt) => {
@@ -201,32 +216,66 @@ document.body.addEventListener('click',function(evt){
 function screen3Effects() {
   const swiper = new Swiper('.zoom-slider-wrapper', {
       // Optional parameters
-  modules: [ Navigation],
-  slidesPerView: 4.5,
-  loop: false,
-  spaceBetween: 40,
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1.5,
-      spaceBetween: 20
+    modules: [ Navigation],
+    slidesPerView: 4.5,
+    loop: false,
+    spaceBetween: 40,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1.5,
+        spaceBetween: 20
+      },
+      // when window width is >= 480px
+      993: {
+        slidesPerView: 3.5,
+        spaceBetween: 30
+      },
+      1440: {
+        slidesPerView: 4.5,
+        spaceBetween: 40
+      }
+      // when window width is >= 640px
     },
-    // when window width is >= 480px
-    993: {
-      slidesPerView: 3.5,
-      spaceBetween: 30
+    navigation: {
+      nextEl: document.querySelector('[data-screen3-next]'),
+      prevEl: document.querySelector('[data-screen3-prev]'),
     },
-    1440: {
-      slidesPerView: 4.5,
-      spaceBetween: 40
+  });
+  gsap.to('.zoom-slider .swiper-slide__arrow', {
+    autoAlpha: 0
+  });
+
+  gsap.to(`.zoom-slider .swiper-slide:nth-child(5) .swiper-slide__arrow, .zoom-slider .swiper-slide-active .swiper-slide__arrow`, {
+    autoAlpha: 1
+  });
+
+
+  swiper.on('slideChangeTransitionStart', () => {
+    // document.querySelectorAll('.zoom-slider .swiper-slide__arrow').forEach(el => {
+    //   el.style.display = 'none';
+    // });
+    gsap.to('.zoom-slider .swiper-slide__arrow', {
+      autoAlpha: 0
+    })
+  });
+  swiper.on('slideChangeTransitionEnd', ({ realIndex }) => {
+
+    gsap.to(`.zoom-slider .swiper-slide:nth-child(${realIndex + 5}) .swiper-slide__arrow, .zoom-slider .swiper-slide-active .swiper-slide__arrow`, {
+      autoAlpha: 1
+    });
+  })
+
+  document.body.addEventListener('click',function zoomSliderClicker(evt){
+    const target = evt.target.closest('.swiper-slide__arrow');
+    if (!target) return;
+
+    if (target.closest('.swiper-slide-active')) {
+      swiper.slidePrev();
+    } else {
+      swiper.slideNext();
     }
-    // when window width is >= 640px
-  },
-  navigation: {
-    nextEl: document.querySelector('[data-screen3-next]'),
-    prevEl: document.querySelector('[data-screen3-prev]'),
-  },
-});
+  });
   // swiper.on('touchStart', () => {
   //   document.querySelector('.zoom-slider-wrapper').classList.add('drag')
 

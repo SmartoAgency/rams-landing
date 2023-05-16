@@ -14,10 +14,5 @@ export const eases = {
 };
 
 export const langDetect = () => {
-  if (window.location.pathname.match(/\/ru\//)) {
-    return 'ru';
-  } if (window.location.pathname.match(/\/en\//)) {
-    return 'en';
-  }
-  return 'uk';
+  document.documentElement.getAttribute('lang') || 'tr';
 };

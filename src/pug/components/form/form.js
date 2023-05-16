@@ -13,7 +13,8 @@ const sendForm = async (data) => {
 const lang = langDetect();
 (async () => {
   await i18next.init({
-    lng: lang, // Текущий язык
+    // lng: lang, // Текущий язык
+    lng: 'tr', // Текущий язык
     debug: true,
     resources: {
       ru: {
