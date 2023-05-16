@@ -28,6 +28,13 @@
         left: var(--page-side-fields);
         bottom: var(--page-side-fields);
         z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+        &>:nth-child(n+2) {
+            margin-left: 30px;
+        }
     }
     .swiper-wrapper {
 

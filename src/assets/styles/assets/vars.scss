@@ -33,6 +33,7 @@ $gold: #CFA46E;
     --header-h: 90px;
     --logo-w: 120px;
     --sliceFigure-big: 362px;
+	--section-v-offset: 100px;
   }
 }
 @media screen and (max-width: 992px){
@@ -104,6 +105,16 @@ $color-gray-light: rgba(210,210,211,1);
 	text-decoration: none;
 	text-transform: none;
 }
+.text-style-h-1-important {
+	font-size: 3vw !important;
+	font-family: "Golos", sans-serif !important;
+	font-weight: 400 !important;
+	font-style: normal !important;
+	line-height: 120% !important;
+	letter-spacing: -0.03em !important;
+	text-decoration: none !important;
+	text-transform: none !important;
+}
 .text-style-h-3 {
 	font-size: 2.08vw;
 	font-family: "Golos", sans-serif;
@@ -113,6 +124,16 @@ $color-gray-light: rgba(210,210,211,1);
 	letter-spacing: -0.03em;
 	text-decoration: none;
 	text-transform: none;
+}
+.text-style-h-3-important {
+	font-size: 2.08vw !important;
+	font-family: "Golos", sans-serif !important;
+	font-weight: 400 !important;
+	font-style: normal !important;
+	line-height: 120% !important;
+	letter-spacing: -0.03em !important;
+	text-decoration: none !important;
+	text-transform: none !important;
 }
 .text-style-h-4 {
 	font-size: 1.04vw;
@@ -124,6 +145,16 @@ $color-gray-light: rgba(210,210,211,1);
 	text-decoration: none;
 	text-transform: none;
 }
+.text-style-h-4-important {
+	font-size: 1.04vw !important; 
+	font-family: "Golos", sans-serif !important; 
+	font-weight: 400 !important; 
+	font-style: normal !important; 
+	line-height: 140% !important; 
+	letter-spacing: -0.03em !important; 
+	text-decoration: none !important; 
+	text-transform: none !important; 
+}
 .text-style-body {
 	font-size: 0.83vw;
 	font-family: "Golos", sans-serif;
@@ -133,6 +164,16 @@ $color-gray-light: rgba(210,210,211,1);
 	letter-spacing: -0.03em;
 	text-decoration: none;
 	text-transform: none;
+}
+.text-style-body-important {
+	font-size: 0.83vw !important;
+	font-family: "Golos", sans-serif !important;
+	font-weight: 400 !important;
+	font-style: normal !important;
+	line-height: 140% !important;
+	letter-spacing: -0.03em !important;
+	text-decoration: none !important;
+	text-transform: none !important;
 }
 
 @mixin text-style-h-1() {

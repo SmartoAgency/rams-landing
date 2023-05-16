@@ -4,7 +4,10 @@
 	top: 0;
 	width: 100%;
 	z-index: 40;
-	
+	transition: transform .45s ease-out;
+	&.headroom--unpinned {
+		transform: translateY(-100%);
+	}
   background: rgba(28, 29, 34, 0.8);
 	// background-color: #27314B;
     display: flex;
@@ -333,14 +336,5 @@
 	}
 }
 [data-up-arrow] {
-	position: fixed;
-	--size: 60px;
-	right: var(--page-side-fields);
-	bottom: var(--page-side-fields);
-	width: var(--size);
-	height: var(--size);
-	z-index:10;
-	@include to(575px){
-		--size: 40px;
-	}
+	cursor: pointer;
 }

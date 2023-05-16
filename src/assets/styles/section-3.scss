@@ -9,6 +9,9 @@
      &__left {
             @include size(6);
             @include shift(0);
+            &>:nth-child(n+2) {
+                margin-top: 20px;
+            }
         }
         &__right {
             

@@ -1,0 +1,67 @@
+-
+    var sec10 = [
+        {
+            text: 'Garden APP',
+            img: './assets/images/sec10/1',
+        },
+        {
+            text: 'Yeni Nesil Kapalı Otopark',
+            img: './assets/images/sec10/2',
+        },
+        {
+            text: 'IP Interkom',
+            img: './assets/images/sec10/3',
+        },
+        {
+            text: 'Güvenlik',
+            img: './assets/images/sec10/4',
+        },
+        {
+            text: 'Ses Yalıtım',
+            img: './assets/images/sec10/5',
+        },
+    ]
+section.section-10#section10
+    .text-style-h-1.text-black Kusursuz mühendi̇sli̇k
+    div
+        .section-10__group
+            .text-style-h-3.text-gray Pencere
+            .text-style-h-4.text-gray-body Rehau Euro Design 70 serisi PVC doğrama
+            .delimiter
+        .section-10__group
+            .text-style-h-3.text-gray Duvar
+            .text-style-h-4.text-gray-body G2 400 kg/m3 Gazbeton
+            .delimiter
+        .section-10__group
+            .text-style-h-3.text-gray Yalıtım
+            .text-style-h-4.text-gray-body Termostatlı Yerden Isıtma Sistemi
+            .delimiter
+        .section-10__group
+            .text-style-h-3.text-gray Demir Sınıfı
+            .text-style-h-4.text-gray-body B420C Nervürlü inşaat Demiri
+    div
+        .section-10__group
+            .text-style-h-3.text-gray Betonarme Sistem
+            .text-style-h-4.text-gray-body Kirişsiz mantar döşeme
+            .delimiter
+        .section-10__group
+            .text-style-h-3.text-gray Bina Temeli
+            .text-style-h-4.text-gray-body Radye Temel
+            .delimiter
+        .section-10__group
+            .text-style-h-3.text-gray Beton
+            .text-style-h-4.text-gray-body Beton Sınıfı: C30/37
+            .delimiter
+        .section-10__group
+            .text-style-h-3.text-gray Kolon
+            .text-style-h-4.text-gray-body Kolon Beton Sınıfı: C40
+    .section-10__gallery
+        each val in sec10
+            .section-10__gallery-item
+                +responsiveImage([
+                    val['img']+'/img.jpg 1920',
+                    val['img']+'/img@075x.jpg 1240',
+                    val['img']+'/img@05x.jpg 600',
+                    val['img']+'/img@05x.jpg 320',
+                ], 'Koru')
+                p.text-gray-body #{val['text']}

@@ -11,7 +11,7 @@ block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
 block content
-  section.section-1(data-section-1-slider)
+  section.section-1(data-section-1-slider)#section1
     .section-1__nav
       .section-1__nav-arrows
           <svg data-section-1-slider-prev width="12" height="28" viewBox="0 0 12 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,12 +24,12 @@ block content
         span 1
         span /
         span 2
-    .section-1__arrow
+    .section-1__arrow(data-arrow-down)
       <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M46.5 65.1786L56.0294 74.5M56.0294 74.5L65.5588 65.1786M56.0294 74.5C56.0294 68.9762 56.0294 56.7548 56.0294 52.0595C56.0294 46.1905 62.0294 45.5 63.4412 45.5C64.5706 45.5 69.6176 45.5 73.5 45.5" stroke="white" stroke-linecap="round"/>
         <rect x="0.5" y="0.5" width="119" height="119" rx="59.5" stroke="white" stroke-opacity="0.4"/>
       </svg>
-      span scroll
+      span.text-style-h-4.text-white Scroll
     .swiper-wrapper
       .swiper-slide       
         +responsiveImage([
@@ -57,7 +57,7 @@ block content
           a.button-30(href="#")
             include ../components/icons/plan.svg
             span Dai̇re planlari
-  section.section-2
+  section.section-2#section2
     .section-2__left
       .text-style-h-1.text-black Proje hakkinda
     .section-2__right
@@ -66,19 +66,19 @@ block content
       div
         .text-style-h-3.text-gray 2023
         .text-gray-body.text-style-h-4 tesli̇m
-        .section-2-delimiter
+        .delimiter
       div
         .text-style-h-3.text-gray 796
         .text-gray-body.text-style-h-4 dai̇re sayisi
-        .section-2-delimiter
+        .delimiter
       div
         .text-style-h-3.text-gray 10-13
         .text-gray-body.text-style-h-4 kat dai̇re sayisi
-        .section-2-delimiter
+        .delimiter
       div
         .text-style-h-3.text-gray 10.000 m²
         .text-gray-body.text-style-h-4 ti̇cari̇ alan
-        .section-2-delimiter
+        .delimiter
       div
         .text-style-h-3.text-gray 104.72 m² – 307.4 m²
         .text-gray-body.text-style-h-4 dai̇re alanlari
@@ -91,10 +91,10 @@ block content
       './assets/images/sec2/sec-2-bg@3x.jpg 600',
       './assets/images/sec2/sec-2-bg@3x.jpg 320',
     ], 'Альтернативний текст')
-  section.section-3
+  section.section-3#section3
     .section-3__left
       .text-black.text-style-h-1 Bölge
-      a.button-30.button-30--red(href="#") 
+      a.button-30.button-30--red(href="https://360.ramsgarden.com/3d/" target='_blank') 
         include ../components/icons/3d.svg
         span 3D Daire Seçimi
     .section-3__right
@@ -111,6 +111,13 @@ block content
   include ../includes/home/section-5.pug
   include ../includes/home/section-6.pug
   include ../includes/home/section-7.pug
+  include ../includes/home/section-8.pug
+  include ../includes/home/section-9.pug
+  include ../includes/home/section-10.pug
+  include ../includes/home/section-11.pug
+  include ../includes/home/section-12.pug
+  include ../includes/home/section-13.pug
+  include ../includes/home/section-14.pug
 
 block footer
   include ../includes/footer.pug

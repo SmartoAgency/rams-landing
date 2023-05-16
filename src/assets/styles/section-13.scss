@@ -1,0 +1,92 @@
+.section-13 {
+    height: 108vw;
+    position: relative;
+    padding-left: var(--page-side-fields);
+    padding-right: var(--page-side-fields);
+    padding-bottom: var(--section-v-offset);
+    padding-top: var(--section-v-offset);
+    @include row-flex;
+    &__info-group {
+        &>:nth-child(2) {
+            margin-top: 8px;
+        }
+        .delimiter {
+            margin-top: 26px;
+            margin-bottom: 26px;
+        }
+    }
+    &__left {
+        @include size(11);
+        @include shift(0);
+        @include shift-padding-right(3);
+    }
+    &__right {
+        @include size(13);
+        @include shift(0);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        align-content: flex-start;
+        &-half {
+            @include size(12);
+            @include shift(0);
+            // display: flex;
+            // align-items: flex-start;
+            // align-content: flex-start;
+            // flex-wrap: wrap;
+            svg {
+                width: 100%;
+                height: auto;
+            }
+        }
+        &-half-bottom {
+            @include size(12);
+            @include shift(0);
+            display: flex;
+            align-items: flex-start;
+            align-content: flex-start;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            padding-top: 40px;
+            &>:nth-child(n+2) {
+                margin-left: auto;
+            }
+        }
+        &-full {
+            @include size(24);
+            @include shift(0);
+            margin-top: 40px;
+        }
+    
+    .df {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .button-tiny~.button-tiny {
+        margin-top: 2px;
+    }
+    .logo {
+        width: 132px;
+        height: auto;
+    }
+    .logo~.logo {
+        margin-top: 40px;
+    }
+    .world-map {
+        margin-top: 40px;
+    }
+    .fdc {
+        flex-direction: column;
+    }
+    
+    }
+    picture {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+}

@@ -1,0 +1,59 @@
+section.section-13#section13
+    .section-13__left
+        .text-style-h-1.text-black Rams Hakkinda
+    +responsiveImage([
+        './assets/images/sec13/sec13image.jpg 1920',
+        './assets/images/sec13/sec13image@075x.jpg 1240',
+        './assets/images/sec13/sec13image@05x.jpg 600',
+        './assets/images/sec13/sec13image@05x.jpg 320',
+    ], 'Rams Hakkinda')
+    .section-13__right
+        .section-13__right-half
+            .section-13__info-group
+                div.text-style-h-3.text-gray 35
+                div.text-style-h-4.text-gray-body Yillik tecrübe
+                .delimiter
+            .section-13__info-group
+                div.text-style-h-3.text-gray 4
+                div.text-style-h-4.text-gray-body Milyon m² tamamlanan inşaat alani
+                .delimiter
+            .section-13__info-group
+                div.text-style-h-3.text-gray 2
+                div.text-style-h-4.text-gray-body Milyon m² devam eden inşaat alani
+                .delimiter
+            .section-13__info-group
+                div.text-style-h-3.text-gray 20 000
+                div.text-style-h-4.text-gray-body Anahtar teslim
+        .section-13__right-half
+            .section-13__info-group
+                div.text-style-h-3.text-gray 25 000
+                div.text-style-h-4.text-gray-body Çalişan sayisi
+                .delimiter
+            .section-13__info-group
+                div.text-style-h-3.text-gray 6
+                div.text-style-h-4.text-gray-body Ülke
+                .delimiter
+            .section-13__info-group
+                div.text-style-h-3.text-gray 11
+                div.text-style-h-4.text-gray-body Şehir
+                .delimiter
+            .section-13__info-group
+                div.text-style-h-3.text-gray 8
+                div.text-style-h-4.text-gray-body Farkli sektörde faaliyet
+        .section-13__right-full
+            .delimiter
+        .section-13__right-half
+            include ./world-map.svg
+        .section-13__right-half-bottom
+            .df.fdc
+                button(type="button" data-world-map-marker="Almanya").button-tiny Almanya
+                button(type="button" data-world-map-marker="Moskova").button-tiny Moskova
+                button(type="button" data-world-map-marker="Kazakistan").button-tiny Kazakistan
+                button(type="button" data-world-map-marker="Türkiye").button-tiny Türkiye
+                button(type="button" data-world-map-marker="Dubai").button-tiny Dubai
+                button(type="button" data-world-map-marker="Tayland").button-tiny Tayland
+            .df.fdc
+                a(href="https://ramsturkiye.com.tr/" target='_blank').logo
+                    +img('ramsturkiye-logo-1.svg').logo
+                a(href="https://rams-global.com/" target='_blank').logo
+                    +img('Rams-Global-logo.png').logo

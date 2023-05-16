@@ -4,8 +4,16 @@
 @import '../section-4';
 @import '../section-5';
 @import '../section-7';
+@import '../section-8';
+@import '../section-9';
+@import '../section-10';
+@import '../section-11';
+@import '../section-12';
+@import '../section-13';
+@import '../section-14';
 @import '../components/bordered-block';
 @import '../components/build-highlighter';
+@import '../components/delimiter';
 
 .button-30 {
   background: var(--color-green);
@@ -20,13 +28,43 @@
   transition: .25s ease-out;
   border: none;
   width: max-content;
+  position: relative;
   @include text-style-h-4;
   text-decoration: none;
+  overflow: hidden;
+  &.safari {
+		transform: translateZ(1px);
+	}
+
+  .button__hover {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%) scale(0) !important;
+		width: calc(100% + 5px);
+		height: calc(100% + 5px);
+		background-color: var(--color-black);
+		// clip-path: circle(0% at 0% 100%);
+		border-radius: 30px;
+		// transform: scale(0);
+		// -webkit-clip-path: circle(0% at 0% 100%);
+		// transform: scale(0) !important;
+		transition: transform .4s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+		z-index: 0;
+		
+	}
+  @include from(576px){
+		&:hover .button__hover {
+			transform: translate(-50%,-50%) scale(1.2) !important;
+		}
+	}
   span {
       @include text-style-h-4;
       color: var(--color); 
       display: inline-block;
       vertical-align: middle;
+      position: relative;
+      z-index: 2;
   }
   &:hover {
       background-color: var(--color-green);
@@ -36,6 +74,8 @@
     background: var(--color-red);
   }
   svg {
+          position: relative;
+      z-index: 2;
     //   stroke: var(--color);
   }
   svg:last-child {
@@ -43,5 +83,25 @@
   }
   svg:first-child {
       margin-right: 8px;
+  }
+}
+
+.button-tiny {
+  border-radius: 100px;
+  padding: 4px 8px;
+  color: var(--color-white);
+  background-color: var(--color-green);
+  @include text-style-h-4;
+  border: none;
+  transition: .35s ease-out;
+  &:hover {
+    color: var(--color-green);
+    background-color: var(--color-white);
+  }
+}
+
+.world-map {
+  [data-world-map-marker] {
+    transition: opacity .25s ease-out;
   }
 }

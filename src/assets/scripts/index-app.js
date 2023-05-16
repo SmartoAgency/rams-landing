@@ -6,7 +6,11 @@ import * as yup from 'yup';
 import Swiper, { EffectFade, Navigation } from 'swiper';
 import FormMonster from '../../pug/components/form/form';
 import SexyInput from '../../pug/components/input/input';
+import Accordion from 'accordion-js';
+import Headroom from "headroom.js";
 import { lenis } from './modules/scroll/leniscroll';
+import buttonHover from './modules/buttonHover';
+
 
 
 const scroller = lenis;
@@ -20,65 +24,21 @@ Swiper.use([EffectFade, Navigation]);
 global.gsap = gsap;
 global.axios = axios;
 
-/* eslint-disable-next-line */
 
-/*
- * smooth scroll end
- */
-/** ******************************* */
-/** ******************************* */
+var myElement = document.querySelector("header");
+// construct an instance of Headroom, passing the element
+var headroom  = new Headroom(myElement);
+// initialise
+headroom.init();
+
+
 /*
  * form handlers start
  */
 const forms = [
-  '[data-home-contact]',
+  '[data-bottom-form]',
   '[data-form]',
 ];
-const formsWithRedirect = [
-  '[data-popup-form]',
-];
-
-formsWithRedirect.forEach((form) => {
-  const $form = document.querySelector(form);
-  if ($form) {
-    /* eslint-disable */
-    new FormMonster({
-      /* eslint-enable */
-      elements: {
-        $form,
-        showSuccessMessage: false,
-        successAction: () => { window.location.href = 'message'; },
-        $btnSubmit: $form.querySelector('[data-btn-submit]'),
-        fields: {
-          name: {
-            inputWrapper: new SexyInput({ animation: 'none', $field: $form.querySelector('[data-field-name]') }),
-            rule: yup.string().required(i18next.t('required')).trim(),
-            defaultMessage: i18next.t('name'),
-            valid: false,
-            error: [],
-          },
-
-          phone: {
-            inputWrapper: new SexyInput({ animation: 'none', $field: $form.querySelector('[data-field-phone]'), typeInput: 'phone' }),
-            rule: yup
-              .string()
-              .required(i18next.t('required'))
-              .min(16, i18next.t('field_too_short', { cnt: 19 - 7 })),
-
-            defaultMessage: i18next.t('phone'),
-            valid: false,
-            error: [],
-          }
-        },
-
-      },
-    });
-
-    $form.querySelector('.js-mask-absolute').addEventListener('click', () => {
-      $form.querySelector('[name="phone"]').focus();
-    }, false);
-  }
-});
 
 forms.forEach((form) => {
   const $form = document.querySelector(form);
@@ -230,3 +190,194 @@ function screen3Effects() {
 }
 
 screen3Effects();
+
+new Accordion('.accordion-container');
+
+
+document.body.addEventListener('click',function(evt){
+  const target = evt.target.closest('[data-up-arrow]');
+  if (!target) return;
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  })
+});
+document.body.addEventListener('click',function(evt){
+  const target = evt.target.closest('[data-arrow-down]');
+  if (!target) return;
+  window.scrollTo({
+    top: window.innerHeight,
+    behavior: 'smooth',
+  })
+});
+
+
+
+function worldMapHandler() {
+  document.querySelectorAll('button[data-world-map-marker]').forEach(el => {
+    const targetValue = el.dataset.worldMapMarker;
+
+    el.addEventListener('mouseenter',function(evt){
+      hideMarkers();
+      document.querySelectorAll(`g[data-world-map-marker="${targetValue}"]`).forEach(marker => {
+        marker.style.opacity = 1;
+      })
+    });
+    el.addEventListener('mouseleave',function(evt){
+      showMarkers();
+    });
+  });
+
+  function showMarkers() {
+    document.querySelectorAll('g[data-world-map-marker]').forEach(marker => {
+      marker.style.opacity = 1;
+    })
+  }
+  function hideMarkers() {
+    document.querySelectorAll('g[data-world-map-marker]').forEach(marker => {
+      marker.style.opacity = 0;
+    })
+  }
+
+}
+
+worldMapHandler();
+
+
+
+
+
+const closeMenuTl = gsap.timeline({
+    paused: true,
+  })
+    .fromTo('.menu__item--1', {
+      clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
+    }, {
+      clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)',
+      ease: 'Expo.easeOut',
+      duration: 1.5
+    })
+    .fromTo('.action--close', {
+      autoAlpha:1,
+    }, {
+      autoAlpha:0
+    }, '<')
+    .fromTo('.menu__item-inner>*', {
+      y: 0,
+      autoAlpha: 1,
+    }, {
+      autoAlpha: 0,
+      y: '50%',
+      ease: 'Quart.easeInOut',
+      duration: 0.55,
+      stagger: 0.1
+    }, '<')
+    .fromTo('.menu__item--2 img', {
+      x: 0,
+    }, {
+      x: '-100%',
+      ease: 'Expo.easeOut',
+      duration: 1.5
+    }, '<')
+    .fromTo('.menu__item--3 img', {
+      y: 0,
+    }, {
+      y: '100%',
+      ease: 'Expo.easeOut',
+      duration: 1.5
+    }, '<')
+    .fromTo('.menu__item--4 img', {
+      y: 0,
+    }, {
+      y: '100%',
+      ease: 'Expo.easeOut',
+      duration: 1.5
+    }, '<')
+    .fromTo('.menu__item--5 img', {
+      y: 0,
+    }, {
+      y: '-100%',
+      ease: 'Expo.easeOut',
+      duration: 1.5
+    }, '<')
+    .set('.menu', {
+      pointerEvents: 'none',
+      visibility: 'hidden'
+    })
+
+
+
+    const openMenuTl = gsap.timeline({
+      paused: true,
+    })
+      .set('.menu', {
+        pointerEvents: 'all',
+        visibility: 'visible'
+      })
+      .fromTo('.menu__item--1', {
+        clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)',
+      }, {
+        clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
+        ease: 'Expo.easeOut',
+        duration: 1.5
+      })
+      .fromTo('.menu__item-inner>*', {
+        autoAlpha: 0,
+        y: '50%'
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        ease: 'Quart.easeInOut',
+        duration: 0.55,
+        stagger: 0.1
+      }, '<')
+      .fromTo('.menu__item--2 img', {
+        x: '-100%'
+      }, {
+        x: 0,
+        ease: 'Expo.easeOut',
+        duration: 1.5
+      }, '<')
+      .fromTo('.menu__item--3 img', {
+        y: '100%'
+      }, {
+        y: 0,
+        ease: 'Expo.easeOut',
+        duration: 1.5
+      }, '<')
+      .fromTo('.menu__item--4 img', {
+        y: '100%'
+      }, {
+        y: 0,
+        ease: 'Expo.easeOut',
+        duration: 1.5
+      }, '<')
+      .fromTo('.menu__item--5 img', {
+        y: '-100%'
+      }, {
+        y: 0,
+        ease: 'Expo.easeOut',
+        duration: 1.5
+      }, '<')
+      .fromTo('.action--close', {
+        autoAlpha:0
+      }, {
+        autoAlpha:1
+      });
+document.body.addEventListener('click',function(evt){
+  const target = evt.target.closest('[data-menu-call]');
+
+  if (!target) return;
+  openMenuTl.progress(0).play();
+
+});
+document.body.addEventListener('click',function(evt){
+  const target = evt.target.closest('[data-menu-close]');
+
+  if (!target) return;
+  closeMenuTl.timeScale(1.5).progress(0).play();
+
+});
+
+
+buttonHover('.button-30');

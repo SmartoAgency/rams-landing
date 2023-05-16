@@ -1,0 +1,57 @@
+.section-12 {
+    padding-left: var(--page-side-fields);
+    padding-right: var(--page-side-fields);
+    padding-bottom: var(--section-v-offset);
+    padding-top: var(--section-v-offset);
+    @include row-flex;
+    &>:nth-child(1) {
+        @include size(11);
+        @include shift-padding-right(3);
+        @include shift(0);
+    }
+    .accordion-container {
+        @include size(13);
+        @include shift(0);
+    }
+}
+
+.ac {
+    border: none;
+    .ac-trigger {
+        color: var(--color-black);
+        padding-top: 26px;
+        padding-bottom: 26px;
+        padding-left: 0;
+        &:after {
+            content: '';
+            background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.0552 0.0576172C12.6075 0.0576172 13.0552 0.505332 13.0552 1.05762V11.0556H23.0532C23.6055 11.0556 24.0532 11.5033 24.0532 12.0556C24.0532 12.6079 23.6055 13.0556 23.0532 13.0556H13.0552V23.0536C13.0552 23.6059 12.6075 24.0536 12.0552 24.0536C11.503 24.0536 11.0552 23.6059 11.0552 23.0536V13.0556H1.05725C0.504966 13.0556 0.057251 12.6079 0.057251 12.0556C0.057251 11.5033 0.504966 11.0556 1.05725 11.0556H11.0552V1.05762C11.0552 0.505332 11.503 0.0576172 12.0552 0.0576172Z' fill='%237A9049'/%3E%3C/svg%3E%0A");
+            width: 24px;
+            height: 24px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        &:focus {
+            color: var(--color-black);
+        }
+    }
+    &.is-active > .ac-header .ac-trigger::after {
+        content: '';
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 12C0 11.4477 0.447715 11 1 11H22.9994C23.5517 11 23.9994 11.4477 23.9994 12C23.9994 12.5523 23.5517 13 22.9994 13H1C0.447715 13 0 12.5523 0 12Z' fill='%237A9049'/%3E%3C/svg%3E%0A");
+    }
+    .ac-panel {
+
+        .ac-text {
+            padding-left: 0;
+            padding-right: 0;
+            color: var(--color-gray-body);
+            p:nth-child(n+2) {
+                margin-top: 20px;
+            }
+        }
+    }
+    &.is-active {
+        .delimiter {
+            opacity: 0;
+        }
+    }
+}
