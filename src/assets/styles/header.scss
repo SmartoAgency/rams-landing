@@ -45,7 +45,6 @@
 	}
 	@include to(575px){
 		--between-margin: 10px;
-		background: linear-gradient(180deg, rgba(39, 41, 54, 0.6) 0%, rgba(39, 41, 54, 0) 100%);
 	}
     &>:nth-child(n+2) {
         margin-left: var(--between-margin);
@@ -337,4 +336,36 @@
 }
 [data-up-arrow] {
 	cursor: pointer;
+}
+
+
+.mobile,
+.tablet {
+	.header {
+		.header__menu {
+			font-size: 16px;
+			svg {
+				width: 40px;
+				height: 40px;
+			}
+		}
+		&>svg {
+			width: 75px;
+		}
+		.button-30 {
+			padding: 0;
+			width: 40px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+			svg {
+				margin-right: 0;
+			}
+			span {
+				display: none;
+			}
+		}
+	}
 }

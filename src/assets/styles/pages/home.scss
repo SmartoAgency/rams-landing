@@ -86,6 +86,17 @@
   }
 }
 
+.mobile,
+.tablet {
+  .button-30 {
+    padding: 8px 16px;
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+
 .button-tiny {
   border-radius: 100px;
   padding: 4px 8px;
@@ -97,6 +108,14 @@
   &:hover {
     color: var(--color-green);
     background-color: var(--color-white);
+  }
+}
+
+
+.mobile,
+.tablet {
+  .button-tiny {
+    font-size: 12px;
   }
 }
 

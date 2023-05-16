@@ -15,6 +15,28 @@
     }
 }
 
+
+.tablet,
+.mobile {
+    .section-12 {
+        padding-left: var(--page-side-fields);
+        padding-right: var(--page-side-fields);
+        padding-bottom: var(--section-v-offset);
+        padding-top: var(--section-v-offset);
+        @include row-flex;
+        &>:nth-child(1) {
+            @include size(24);
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .accordion-container {
+            @include size(24);
+            @include shift(0);
+        }
+    }
+}
+
+
 .ac {
     border: none;
     .ac-trigger {

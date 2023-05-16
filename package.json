@@ -84,6 +84,7 @@
     "axios": "^0.21.1",
     "bezier-easing": "^2.1.0",
     "cleave.js": "^1.6.0",
+    "current-device": "^0.10.2",
     "gsap": "^3.5.1",
     "gulp-pretty-html": "^2.0.10",
     "headroom.js": "^0.12.0",

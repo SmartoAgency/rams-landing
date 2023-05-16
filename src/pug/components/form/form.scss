@@ -329,3 +329,19 @@ textarea.form-field__input {
 }
 
 // @import './form-mobile';
+
+.tablet,
+.mobile {
+  .form-wrapper {
+    background-color: var(--color-white);
+    .form {
+      width: 100%;
+      padding-left: var(--page-side-fields);
+      padding-right: var(--page-side-fields);
+      flex-wrap: wrap;
+    }
+    .form-title {
+      margin-bottom: 16px;
+    }
+  }
+}

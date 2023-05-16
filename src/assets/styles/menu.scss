@@ -368,3 +368,28 @@
             opacity: 1;
         }
     }
+
+
+
+.mobile,
+.tablet {
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .menu__item--1 {
+        background-color: var(--color-white);
+    }
+    .menu__item--2 {
+        display: none;
+    }
+    .menu__item--3 {
+        display: none;
+    }
+    .menu__item--4 {
+        display: none;
+    }
+    .menu__item--5 {
+        display: none;
+    }
+}

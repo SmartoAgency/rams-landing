@@ -13,3 +13,12 @@
     text-transform: uppercase;
     padding: 4px;
 }
+
+.tablet,
+.mobile {
+    .build-highlighter {
+
+        --size: 27px;
+        font-size: 16px;
+    }
+}

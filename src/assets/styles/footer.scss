@@ -25,3 +25,20 @@
     margin-top: 2px;
   }
 }
+
+.tablet,
+.mobile {
+  .footer {
+    padding-bottom: 20px;
+    padding-right: 75px;
+    .dev-logo {
+      right: 0;
+    }
+    .delimiter {
+      margin-bottom: 20px;
+    }
+    p~p {
+      margin-top: 8px;
+    }
+  }
+}

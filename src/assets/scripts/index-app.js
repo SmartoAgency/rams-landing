@@ -1,5 +1,4 @@
 import i18next from 'i18next';
-import gsap from 'gsap';
 import axios from 'axios';
 import * as yup from 'yup';
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -10,7 +9,9 @@ import Accordion from 'accordion-js';
 import Headroom from "headroom.js";
 import { lenis } from './modules/scroll/leniscroll';
 import buttonHover from './modules/buttonHover';
-
+import splitToLinesAndFadeUp from './modules/effects/splitLinesAndFadeUp';
+import { gsap, ScrollTrigger } from 'gsap/all';
+import "current-device";
 
 
 const scroller = lenis;
@@ -22,7 +23,10 @@ Swiper.use([EffectFade, Navigation]);
  * smooth scroll start
  */
 global.gsap = gsap;
+global.ScrollTrigger = ScrollTrigger;
 global.axios = axios;
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 var myElement = document.querySelector("header");
@@ -381,3 +385,6 @@ document.body.addEventListener('click',function(evt){
 
 
 buttonHover('.button-30');
+
+
+splitToLinesAndFadeUp('section:not(.section-1) .text-style-h-1, section  .text-style-h-3')

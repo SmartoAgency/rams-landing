@@ -22,6 +22,34 @@
     }
 }
 
+.tablet,
+.mobile {
+  .section-4 {
+      // padding-left: var(--page-side-fields);
+      padding-right: var(--page-side-fields);
+      padding-left: var(--page-side-fields);
+      padding-bottom: var(--section-v-offset);
+      align-items: center;
+      @include row-flex();
+      &__left {
+          width: auto;
+          margin-left: calc(var(--page-side-fields) * -1);
+          margin-right: calc(var(--page-side-fields) * -1);
+          svg {
+              width: 100%;
+              height: auto;
+          }
+      
+      }
+      &__right {
+          @include size(24);
+          @include shift(0);
+          &>:nth-child(n+2) {
+              margin-top: 10px;
+          }
+      }
+  }
+}
 
 .genplan-svg {
     [data-build] {

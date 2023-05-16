@@ -90,3 +90,107 @@
         z-index: -1;
     }
 }
+
+.tablet,
+.mobile {
+    .section-13 {
+        height: auto;
+        position: relative;
+        padding-left: var(--page-side-fields);
+        padding-right: var(--page-side-fields);
+        padding-bottom: var(--section-v-offset);
+        padding-top: 0;
+        @include row-flex;
+        
+        .section-13__left {
+            position: absolute;
+            top: calc(var(--page-side-fields));
+            left: var(--page-side-fields);
+            
+        }
+
+        &__info-group {
+            &>:nth-child(2) {
+                margin-top: 8px;
+            }
+            .delimiter {
+                margin-top: 13px;
+                margin-bottom: 13px;
+            }
+        }
+        &__left {
+            @include size(24);
+            @include shift(0);
+            padding-left: 0;
+            padding-right: 0;
+        }
+        &__right {
+            @include size(24);
+            @include shift(0);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            align-content: flex-start;
+            &-half {
+                @include size(12);
+                svg {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            &-half-bottom {
+                @include size(24);
+                padding-top: 20px;
+                &>:nth-child(n+2) {
+                    margin-left: auto;
+                }
+            }
+            &-full {
+                @include size(24);
+                @include shift(0);
+                margin-top: 20px;
+            }
+            &-mobile-full {
+                @include size(24);
+                @include shift(0);
+            }
+        
+        .df {
+            width: 100%;
+        }
+        .df~.df {
+            margin-top: 16px;
+        }
+        .button-tiny~.button-tiny {
+            margin-top: 0;
+        }
+        .logo {
+            width: 50%;
+            height: auto;
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+            }
+        }
+        .logo:nth-child(2) {
+            padding-left: 30px;
+        }
+        .fdc {
+            flex-direction: row;
+            align-items: center;
+        }
+        .logo~.logo {
+            margin-top: 0;
+        }
+        .world-map {
+            margin-top: 20px;
+        }
+        
+        }
+        picture {
+            position: static;
+            margin-bottom: 18px;
+        }
+    }
+}

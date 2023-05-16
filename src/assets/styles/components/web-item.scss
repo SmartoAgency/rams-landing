@@ -46,7 +46,7 @@
         position: absolute;
         --self-size: 100px;
         left: calc(50% - var(--self-size) / 2);
-        bottom: calc(50% - var(--self-size) / 2 + 42.5px);
+        bottom: calc(50%);
         // transform: translate(-50%,-50%);
         z-index: 10;
         width: var(--self-size);
@@ -57,7 +57,6 @@
         transition-duration: .5s;
         @include to(575px){
             --self-size: 50px;
-            bottom: calc(50% - var(--self-size) / 2 + 30px);
         }
     }
     &.is-playing &__play-button {

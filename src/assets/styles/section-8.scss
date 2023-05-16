@@ -32,3 +32,43 @@
         @include shift-left(1);
     }
 }
+
+.tablet,
+.mobile {
+    .section-8 {
+        height: auto;
+        position: relative;
+        padding-left: var(--page-side-fields);
+        padding-right: var(--page-side-fields);
+        picture {
+            position: static;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            z-index: -1;
+        }
+        @include row-flex;
+        &>:nth-child(1) {
+            @include size(24);
+            @include shift(0);
+            @include shift-padding-right(0);
+            margin-bottom: 16px;
+            
+        }
+        &>:nth-child(2) {
+            @include size(24);
+            @include shift(0);
+            &>:nth-child(n+2) {
+                margin-top: 16px;
+            }
+        }
+        &>:nth-child(3) {
+            @include size(24);
+            @include shift-right(0);
+            @include shift-left(0);
+            margin-top: 16px;
+        }
+    }
+}

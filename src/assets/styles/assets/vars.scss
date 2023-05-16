@@ -36,6 +36,9 @@ $gold: #CFA46E;
 	--section-v-offset: 100px;
   }
 }
+
+
+
 @media screen and (max-width: 992px){
   :root {
     --header-h: 110px;
@@ -51,7 +54,12 @@ $gold: #CFA46E;
   }
 }
 
-
+.mobile,
+.tablet {
+	--page-side-fields: 10px;
+	--section-v-offset: 50px;
+	--header-h: 50px;
+}
 
 :root {
 	--color-white: rgba(255,255,255,1);
@@ -105,6 +113,9 @@ $color-gray-light: rgba(210,210,211,1);
 	text-decoration: none;
 	text-transform: none;
 }
+
+
+
 .text-style-h-1-important {
 	font-size: 3vw !important;
 	font-family: "Golos", sans-serif !important;
@@ -114,6 +125,15 @@ $color-gray-light: rgba(210,210,211,1);
 	letter-spacing: -0.03em !important;
 	text-decoration: none !important;
 	text-transform: none !important;
+}
+
+
+.mobile,
+.tablet {
+	.text-style-h-1-important,
+	.text-style-h-1 {
+		font-size: 32px !important;
+	}
 }
 .text-style-h-3 {
 	font-size: 2.08vw;
@@ -125,6 +145,8 @@ $color-gray-light: rgba(210,210,211,1);
 	text-decoration: none;
 	text-transform: none;
 }
+
+
 .text-style-h-3-important {
 	font-size: 2.08vw !important;
 	font-family: "Golos", sans-serif !important;
@@ -135,6 +157,15 @@ $color-gray-light: rgba(210,210,211,1);
 	text-decoration: none !important;
 	text-transform: none !important;
 }
+
+.mobile,
+.tablet {
+	.text-style-h-3-important,
+	.text-style-h-3 {
+		font-size: 16px !important;
+	}
+}
+
 .text-style-h-4 {
 	font-size: 1.04vw;
 	font-family: "Golos", sans-serif;
@@ -145,6 +176,9 @@ $color-gray-light: rgba(210,210,211,1);
 	text-decoration: none;
 	text-transform: none;
 }
+
+
+
 .text-style-h-4-important {
 	font-size: 1.04vw !important; 
 	font-family: "Golos", sans-serif !important; 
@@ -155,6 +189,15 @@ $color-gray-light: rgba(210,210,211,1);
 	text-decoration: none !important; 
 	text-transform: none !important; 
 }
+
+.mobile,
+.tablet {
+	.text-style-h-4-important,
+	.text-style-h-4 {
+		font-size: 12px !important;
+	}
+}
+
 .text-style-body {
 	font-size: 0.83vw;
 	font-family: "Golos", sans-serif;

@@ -36,3 +36,35 @@
         }
     }
 }
+
+.mobile,
+.tablet {
+	.section-9 {
+        height: auto;
+        picture {
+            position: static;
+            margin-top: 30px;
+        }
+        &>:nth-child(1) {
+            @include size(24);
+            @include shift(0);
+            margin-bottom: 12px;
+            
+        }
+        &>:nth-child(3) {
+            @include size(24);
+            @include shift(0);
+            &>:nth-child(n+2) {
+                margin-top: 32px;
+            }
+        }
+        &>:nth-child(2) {
+            @include size(24);
+            @include shift-right(0);
+            @include shift-left(0);
+            &>:nth-child(n+2) {
+                margin-top: 20px;
+            }
+        }
+    }
+}

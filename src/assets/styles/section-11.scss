@@ -33,3 +33,41 @@
         object-fit: cover;
     }
 }
+
+.tablet,
+.mobile {
+    .section-11 {
+        height: auto;
+        position: relative;
+        padding-left: var(--page-side-fields);
+        padding-right: var(--page-side-fields);
+        @include row-flex;
+        &>:nth-child(1) {
+            @include size(24);
+            @include shift(0);
+            padding-left: 0;
+            padding-right: 0;
+            margin-bottom: 16px;
+        }
+        &>:nth-child(2) {
+            @include size(24);
+            @include shift(0);
+            margin-bottom: 12px;
+            &>:nth-child(n+2) {
+                margin-top: 16px;
+            }
+        }
+        &>:nth-child(3) {
+            @include size(24);
+            @include shift(0);
+            margin-bottom: 16px;
+            &>:nth-child(n+2) {
+                margin-top: 16px;
+            }
+        }
+        picture {
+            position: static;
+            margin-top: 20px;
+        }
+    }
+}

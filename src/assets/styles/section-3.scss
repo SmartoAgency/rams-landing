@@ -19,3 +19,22 @@
             @include shift(0);
     }
 }
+
+.tablet,
+.mobile {
+    .section-3 {
+        @include row-flex();
+        &__left {
+                @include size(24);
+                @include shift(0);
+                &>:nth-child(n+2) {
+                    margin-top: 10px;
+                }
+            }
+        &__right {
+            margin-top: 18px;
+            @include size(24);
+            @include shift(0);
+        }
+    }
+}
