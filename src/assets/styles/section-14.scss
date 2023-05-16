@@ -31,6 +31,17 @@
         align-items: center;
         column-gap: 20px;
         margin-top: 20px;
+        svg {
+            transition: .25s ease-out;
+        }
+        &:hover {
+            div{
+                color: var(--color-green);
+            }
+            &>svg {
+                transform: translateX(4px);
+            }
+        }
         &>:nth-child(3) {
             grid-row-start: 2;
             grid-row-end: 2;

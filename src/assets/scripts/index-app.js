@@ -111,11 +111,8 @@ new Swiper('[data-section-1-slider]', {
 
 // eslint-disable-next-line no-new
 new Swiper('[data-sec-5-slider]', {
-  // effect: 'fade',
-  // fadeEffect: {
-  //   crossFade: true,
-  // },
   slidesPerView: 1.05,
+  speed: 1750,
   // spaceBetween: 20,
   navigation: {
     nextEl: document.querySelector('[data-sec-5-slider-next]'),
@@ -124,34 +121,80 @@ new Swiper('[data-sec-5-slider]', {
 });
 
 
-document.body.addEventListener('change', (evt) => {
-  const target = evt.target.closest('[name="genplan"]');
-  if (!target) return;
-  const { value } = target;
-  document.querySelectorAll('[data-build]').forEach((el) => {
-    const regExp = new RegExp(el.dataset.build);
-    el.setAttribute('stroke-opacity', regExp.test(value) ? 1 : 0);
-  });
+// document.body.addEventListener('change', (evt) => {
+//   const target = evt.target.closest('[name="genplan"]');
+//   if (!target) return;
+//   const { value } = target;
+//   document.querySelectorAll('[data-build]').forEach((el) => {
+//     const regExp = new RegExp(el.dataset.build);
+//     el.setAttribute('stroke-opacity', regExp.test(value) ? 1 : 0);
+//   });
 
-  document.querySelectorAll('[name="genplan"]').forEach((el) => {
-    if (el === target) {
-      el.closest('label').classList.add('active');
-      return;
-    }
-    el.closest('label').classList.remove('active');
+//   document.querySelectorAll('[name="genplan"]').forEach((el) => {
+//     if (el === target) {
+//       el.closest('label').classList.add('active');
+//       return;
+//     }
+//     el.closest('label').classList.remove('active');
+//   });
+// });
+
+document.querySelectorAll('.bordered-block__item').forEach(el => {
+  el.addEventListener('mouseenter',function(evt){
+    const target = el.querySelector('input');
+    if (!target) return;
+    const { value } = target;
+    document.querySelectorAll('[data-build]').forEach((el) => {
+      const regExp = new RegExp(el.dataset.build);
+      el.setAttribute('stroke-opacity', regExp.test(value) ? 1 : 0);
+    });
+
+    document.querySelectorAll('[name="genplan"]').forEach((el) => {
+      if (el === target) {
+        el.closest('label').classList.add('active');
+        return;
+      }
+      el.closest('label').classList.remove('active');
+    });
+
   });
-});
+  el.addEventListener('mouseleave',function(evt){
+    document.querySelectorAll('[data-build]').forEach((el) => {
+      const regExp = new RegExp(el.dataset.build);
+      el.setAttribute('stroke-opacity', 0);
+    });
+    document.querySelectorAll('[name="genplan"]').forEach((el) => {
+      el.closest('label').classList.remove('active');
+    });
+  });
+})
 
 
 document.body.addEventListener('click',function(evt){
   const target = evt.target.closest('[data-call-form]');
   if (!target) return;
   document.querySelector('[data-form-wrapper]').classList.add('active');
+  gsap.timeline()
+    .fromTo('[data-form-wrapper] .form', {
+      x: '100%',
+    },{
+      x: '0',
+      duration: '1.25',
+      ease: 'expo.out'
+    })
 });
 document.body.addEventListener('click',function(evt){
   const target = evt.target.closest('[data-close-form]');
   if (!target) return;
-  document.querySelector('[data-form-wrapper]').classList.remove('active');
+  gsap.timeline()
+  .to('[data-form-wrapper] .form', {
+    x: '100%',
+    duration: '0.75',
+    ease: 'expo.out'
+  })
+  .add(() => {
+    document.querySelector('[data-form-wrapper]').classList.remove('active');
+  })
 });
 
 
@@ -259,7 +302,7 @@ const closeMenuTl = gsap.timeline({
     }, {
       clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)',
       ease: 'Expo.easeOut',
-      duration: 1.5
+      duration: 1.25
     })
     .fromTo('.action--close', {
       autoAlpha:1,
@@ -273,7 +316,7 @@ const closeMenuTl = gsap.timeline({
       autoAlpha: 0,
       y: '50%',
       ease: 'Quart.easeInOut',
-      duration: 0.55,
+      duration: 0.35,
       stagger: 0.1
     }, '<')
     .fromTo('.menu__item--2 img', {
@@ -281,28 +324,28 @@ const closeMenuTl = gsap.timeline({
     }, {
       x: '-100%',
       ease: 'Expo.easeOut',
-      duration: 1.5
+      duration: 1.25
     }, '<')
     .fromTo('.menu__item--3 img', {
       y: 0,
     }, {
       y: '100%',
       ease: 'Expo.easeOut',
-      duration: 1.5
+      duration: 1.25
     }, '<')
     .fromTo('.menu__item--4 img', {
       y: 0,
     }, {
       y: '100%',
       ease: 'Expo.easeOut',
-      duration: 1.5
+      duration: 1.25
     }, '<')
     .fromTo('.menu__item--5 img', {
       y: 0,
     }, {
       y: '-100%',
       ease: 'Expo.easeOut',
-      duration: 1.5
+      duration: 1.25
     }, '<')
     .set('.menu', {
       pointerEvents: 'none',
@@ -323,7 +366,7 @@ const closeMenuTl = gsap.timeline({
       }, {
         clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
         ease: 'Expo.easeOut',
-        duration: 1.5
+        duration: 1.25
       })
       .fromTo('.menu__item-inner>*', {
         autoAlpha: 0,
@@ -340,28 +383,28 @@ const closeMenuTl = gsap.timeline({
       }, {
         x: 0,
         ease: 'Expo.easeOut',
-        duration: 1.5
+        duration: 1.25
       }, '<')
       .fromTo('.menu__item--3 img', {
         y: '100%'
       }, {
         y: 0,
         ease: 'Expo.easeOut',
-        duration: 1.5
+        duration: 1.25
       }, '<')
       .fromTo('.menu__item--4 img', {
         y: '100%'
       }, {
         y: 0,
         ease: 'Expo.easeOut',
-        duration: 1.5
+        duration: 1.25
       }, '<')
       .fromTo('.menu__item--5 img', {
         y: '-100%'
       }, {
         y: 0,
         ease: 'Expo.easeOut',
-        duration: 1.5
+        duration: 1.25
       }, '<')
       .fromTo('.action--close', {
         autoAlpha:0

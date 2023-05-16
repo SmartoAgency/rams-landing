@@ -51,6 +51,9 @@
 
 
 .big-slider {
+    .swiper-wrapper {
+        transition-timing-function: cubic-bezier(.23,.75,.45,.96);
+    }
     .swiper-slide {
         @include row-flex();
         &__text {
