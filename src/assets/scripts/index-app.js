@@ -479,4 +479,44 @@ document.body.addEventListener('click',function(evt){
 buttonHover('.button-30');
 
 
-splitToLinesAndFadeUp('section:not(.section-1) .text-style-h-1, section  .text-style-h-3')
+splitToLinesAndFadeUp('section:not(.section-1) .text-style-h-1, section  .text-style-h-3');
+
+
+
+
+function addIntersectionOnceWithCallback (el, cb = () => {}) {
+  const image = el;
+  const target = image;
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+              const lazyImage = entry.target;
+              cb();
+              observer.unobserve(target);
+          }
+        });
+      }, {
+          rootMargin: '0px',
+          threshold: 0.1,
+        });
+      observer.observe(target);
+}
+
+document.querySelectorAll('[data-srcset]').forEach(el => {
+  addIntersectionOnceWithCallback(el, () => {
+    el.setAttribute('srcset', el.dataset.srcset);
+  })
+})
+document.querySelectorAll('img[data-src]').forEach(el => {
+  addIntersectionOnceWithCallback(el, () => {
+    el.setAttribute('src', el.dataset.src);
+  })
+})
+document.querySelectorAll('[data-lazy]').forEach(el => {
+
+
+  addIntersectionOnceWithCallback(el, () => {
+    const lazyElemt = el.querySelector('[data-href]');
+    lazyElemt.setAttribute('href', lazyElemt.dataset.href);
+  })
+})

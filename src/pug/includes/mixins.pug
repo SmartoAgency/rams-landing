@@ -50,9 +50,15 @@ mixin RangeSlider(options)
 				input(id=option.id+"_max" class="js_"+option.id+"_max js-current-max" name=option.id+"_max" maxlength=option.max type="number" min=option.min value=option.max max=option.max)
 
 
-mixin responsiveImage(srcset, alt)
+mixin responsiveImage(srcset, alt, plainLoad)
 	picture&attributes(attributes)
 		each src in srcset
 			- var size = src.split(' ')[1]
-			source(srcset=src.split(' ')[0], media=`(min-width: ${size}px)`)
-		img(srcset=srcset.join(', '), alt=alt)
+			if plainLoad
+				source(srcset=src.split(' ')[0], media=`(min-width: ${size}px)`)
+			else 
+				source(data-srcset=src.split(' ')[0], media=`(min-width: ${size}px)`)
+		if plainLoad
+			img(src=srcset[0].split(' ')[0], alt=alt)
+		else 
+			img(data-src=srcset[0].split(' ')[0], alt=alt)
