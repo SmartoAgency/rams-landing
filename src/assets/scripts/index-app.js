@@ -12,6 +12,7 @@ import buttonHover from './modules/buttonHover';
 import splitToLinesAndFadeUp from './modules/effects/splitLinesAndFadeUp';
 import { gsap, ScrollTrigger } from 'gsap/all';
 import "current-device";
+import googleMap from './modules/map/map';
 
 
 const scroller = lenis;
@@ -520,3 +521,5 @@ document.querySelectorAll('[data-lazy]').forEach(el => {
     lazyElemt.setAttribute('href', lazyElemt.dataset.href);
   })
 })
+
+googleMap();
