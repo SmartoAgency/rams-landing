@@ -1,4 +1,5 @@
 import Cleave from 'cleave.js';
+import intlTelInput from 'intl-tel-input';
 
 export default class SexyInput {
   constructor(setting) {
@@ -113,34 +114,61 @@ export default class SexyInput {
     if (this.typeInput === 'phone') {
       /* eslint-disable */
       input.setAttribute('inputmode', 'tel');
-      // input.intTelIput = intlTelInput(input, {
-      //   preferredCountries: ['ua'],
-      //   autoPlaceholder: 'off',
-      // });
+      input.intTelIput = intlTelInput(input, {
+        preferredCountries: ['tr', 'kz', 'th', 'de', 'ae'],
+        autoPlaceholder: 'off',
+      });
       let cleave = new Cleave(input, {
         /* eslint-enable */
         numericOnly: true,
-        prefix: '+380',
-        blocks: [4, 2, 3, 2, 2],
+        prefix: '+90',
+        blocks: [3, 3, 3, 2, 2],
         delimiters: [' ', ' ', ' ', ''],
       });
-      // input.addEventListener('countrychange', () => {
-      //   const currentCountry = input.intTelIput.getSelectedCountryData();
-      //   const { dialCode } = currentCountry;
-      //   const selfInput = input;
-      //   const maskPartForUkraine = currentCountry.iso2 === 'ua' ? 2 : 3;
-      //   cleave.destroy();
-      //   selfInput.value = '';
-      //   cleave = new Cleave(input, {
-      //     numericOnly: true,
-      //     delimiter: '-',
-      //     prefix: `+${dialCode}`,
-      //     /* В код страны добавляется символ + */
-      //     blocks: [dialCode.toString().length + 1, maskPartForUkraine, 3, 2, 2],
-      //     delimiters: [' ', ' ', ' ', ''],
-      //   });
-      // });
+      input.addEventListener('countrychange', () => {
+        const currentCountry = input.intTelIput.getSelectedCountryData();
+        const { dialCode } = currentCountry;
+        const selfInput = input;
+        let maskPartForUkraine = currentCountry.iso2 === 'ua' ? 2 : 3;
+
+        //'tr', 'kz', 'th', 'de', 'ae'
+        switch (currentCountry.iso2) {
+          case 'tr':
+            maskPartForUkraine = 3;
+            break;
+          case 'kz':
+            maskPartForUkraine = 2;
+            
+            break;
+          case 'th':
+            maskPartForUkraine = 3;
+            
+            break;
+          case 'de':
+            maskPartForUkraine = 3;
+            
+            break;
+          case 'ae':
+              maskPartForUkraine = 4;
+              
+            break;
+        
+          default:
+            break;
+        }
+        cleave.destroy();
+        selfInput.value = '';
+        cleave = new Cleave(input, {
+          numericOnly: true,
+          delimiter: '-',
+          prefix: `+${dialCode}`,
+          /* В код страны добавляется символ + */
+          blocks: [dialCode.toString().length + 1, maskPartForUkraine, 3, 2, 2],
+          delimiters: [' ', ' ', ' ', ''],
+        });
+      });
     }
+
     if (this.animation === 'focus') {
       input.addEventListener('focus', self.selectIn(self));
       input.addEventListener('blur', self.selectOut(self));

@@ -3,7 +3,7 @@ extends ../layout/main
 block variable
 
 block meta
-  title= 'Главная'
+  title= 'Rams Garden - Bahçelievler'
   meta(name='description', content='')
 block head
     link(rel='stylesheet', href="./assets/styles/main.min.css")
@@ -29,7 +29,7 @@ block content
         <path d="M46.5 65.1786L56.0294 74.5M56.0294 74.5L65.5588 65.1786M56.0294 74.5C56.0294 68.9762 56.0294 56.7548 56.0294 52.0595C56.0294 46.1905 62.0294 45.5 63.4412 45.5C64.5706 45.5 69.6176 45.5 73.5 45.5" stroke="white" stroke-linecap="round"/>
         <rect x="0.5" y="0.5" width="119" height="119" rx="59.5" stroke="white" stroke-opacity="0.4"/>
       </svg>
-      span.text-style-h-4.text-white Scroll
+      span.text-style-h-4.text-white Kaydır
     .swiper-wrapper
       .swiper-slide       
         +responsiveImage([
@@ -41,9 +41,9 @@ block content
         .swiper-slide__gradient
         .swiper-slide__text 
           .text-style-h-1.text-white RAMS Garden Bahçelievler'de Bahar Lansmanı Başladı
-          a.button-30(href="#")
+          a.button-30.button-30--red(href="http://360.ramsgarden.com/3d/?%26type%3Dplannings" target='_blank')
             include ../components/icons/plan.svg
-            span Dai̇re planlari
+            span Daıre planları
       .swiper-slide 
         +responsiveImage([
             './assets/images/sec1/sec1-2.jpg 1920',
@@ -53,16 +53,16 @@ block content
           ], 'Альтернативний текст', true).swiper-slide__img
         .swiper-slide__gradient
         .swiper-slide__text 
-          .text-style-h-1.text-white Doğayı Şehirde Yaşatacak Yeni Bir Hayat
-          a.button-30(href="#")
+          .text-style-h-1.text-white Doğayı Şehirde Yaşatan Yeni Bir Yaşam
+          a.button-30.button-30--red(href="http://360.ramsgarden.com/3d/?%26type%3Dplannings" target='_blank')
             include ../components/icons/plan.svg
-            span Dai̇re planlari
+            span Daıre planları
   section.section-2#section2
     .section-2__left
       .text-style-h-1.text-black Proje hakkinda
     .section-2__right
-      .text-gray-body.text-style-h-4 Ulaşabileceğiniz maksimum yeşili ile koruya komşu, tüm ulaşım akslarının merkezinde yer alan 11 blok ve 796 dairesiyle RAMS Garden Bahçelievler, 116 bin metrekarelik geniş bir alanda doğanın ve şehrin birbiriyle buluştuğu konforlu bir yaşam sunuyor.
-      .text-gray-body.text-style-h-4 RAMS Garden Bahçelievler, şehir merkezine yakınlığı ve 42.300 metrekarelik koru ile çevrili benzersiz bir konumda yaşamanın tüm faydalarını bir arada sunmaktadır. Burada şehrin koşuşturmacasından uzaklaşabilir ailenizle birlikte 33.000 metrekarelik peyzaj içerisinde doğanın tadını çıkarabilirsiniz.
+      .text-gray-body.text-style-h-4 Ulaşabileceğiniz maksimum yeşili ile koruya komşu, tüm ulaşım akslarının merkezinde yer alan 11 blok ve 796 dairesiyle RAMS Garden Bahçelievler, 116 bin metrekarelik geniş bir alanda doğa ve şehrin birbiriyle buluştuğu konforlu bir yaşam sunuyor.
+      .text-gray-body.text-style-h-4 RAMS Garden Bahçelievler, şehir merkezine yakınlığı ve 42.300 metrekarelik koru ile çevrili benzersiz bir konumda yaşamanın tüm faydalarını bir arada sunmaktadır. Burada şehrin koşuşturmacasından uzaklaşabilir, ailenizle birlikte 33.000 metrekarelik peyzaj içerisinde doğanın tadını çıkarabilirsiniz.
       div
         .text-style-h-3.text-gray 2023
         .text-gray-body.text-style-h-4 tesli̇m
@@ -98,7 +98,7 @@ block content
       .text-black.text-style-h-1 Bölge
       a.button-30.button-30--red(href="https://360.ramsgarden.com/3d/" target='_blank') 
         include ../components/icons/3d.svg
-        span 3D Daire Seçimi
+        span 3D Daıre Seçımı
     .section-3__right
       .web-item 
         <svg data-circle-with-hover class="web-item__play-button" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -107,8 +107,8 @@ block content
           <path d="M60.8284 50.4859L46.9055 60.232C46.2427 60.6959 45.332 60.2217 45.332 59.4127L45.332 39.9207C45.332 39.1117 46.2427 38.6375 46.9055 39.1015L60.8284 48.8475C61.3971 49.2456 61.3971 50.0878 60.8284 50.4859Z" fill="var(--color-white)"/>
           </svg>
         .web-item__frame
-          img(src="./assets/images/test-build.jpg").web-item__frame-preview
-          iframe(data-src="https://www.youtube.com/embed/DAlzlebbdPo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+          img(src="./assets/images/video-preview.jpg").web-item__frame-preview
+          iframe(data-src="https://player.vimeo.com/video/761805398?autoplay=1&h=f3577b5f54&badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
   include ../includes/home/section-4.pug
   include ../includes/home/section-5.pug
   include ../includes/home/section-6.pug

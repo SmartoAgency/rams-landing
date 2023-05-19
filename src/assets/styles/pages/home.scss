@@ -125,3 +125,46 @@
     transition: opacity .25s ease-out;
   }
 }
+
+[data-circle-with-hover] {
+  cursor: pointer;
+  --transition: .35s ease-in-out;
+  &[disabled] [data-circle-with-hover-default] {
+      fill: transparent;
+      stroke:  #464851;
+      stroke-width: 1px;
+  }
+  [data-circle-with-hover-default] {
+      fill: #464851;
+      transition: var(--transition);
+      transform-origin: center;
+      transform-box: fill-box;
+  }
+  [data-circle-with-hover-hover] {
+      transition: .35s ease-in-out;
+      fill: var(--color-red);
+      transform-origin: center;
+      transform-box: fill-box;
+      transform: scale(0);
+  }
+  path {
+      // stroke: var(--color-red);
+      transition: var(--transition);
+  }
+  @include to(1024px){
+      width: 44px;
+      height: 44px;
+  }
+  @include from(1025px){
+      &:hover path {
+          stroke: var(--color-white);
+          fill: var(--color-white);
+      }
+      &:hover [data-circle-with-hover-default]{
+          transform: scale(0);
+      }
+      &:hover [data-circle-with-hover-hover]{
+          transform: scale(1);
+      }
+  }
+}
