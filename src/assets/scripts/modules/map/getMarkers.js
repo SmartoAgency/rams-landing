@@ -125,7 +125,7 @@ function mockData() {
             "code": "main",
             "list": [
                 {
-                    "name": "Rams Garden Bahçelievler",
+                    "name": "<a style='text-decoration:none; color: rgba(122,144,73,1); font-weight: bold' target='_blank' href='https://ramsgarden.com/'>Rams Garden Bahçelievler</a>",
                     "id": "00",
                     "coordinations": {
                         "latitude": "41.0074626",
@@ -139,7 +139,7 @@ function mockData() {
             "code": "office",
             "list": [
                 {
-                    "name": "Rams Global",
+                    "name": "<a style='text-decoration:none; color: rgba(122,144,73,1); font-weight: bold' href='https://rams-global.com/' target='_blank'>Rams Global</a>",
                     "id": "10",
                     "coordinations": {
                         "latitude": "40.997902",

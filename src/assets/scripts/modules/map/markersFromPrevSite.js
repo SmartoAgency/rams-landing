@@ -6,7 +6,7 @@ export default function markersFromPrevSite() {
             "lat": '41.10966024527444',
             "lng": '29.02421375282044',
             "icon": '/wp-content/uploads/2023/04/pin-beyond.svg',
-            "description": '<a href="http://ramsbeyondistanbul.com/" target="_blank">RAMS BEYOND İSTANBUL</a>'
+            "description": '<a style="text-decoration:none; color: rgba(122,144,73,1); font-weight: bold" href="http://ramsbeyondistanbul.com/" target="_blank">RAMS BEYOND İSTANBUL</a>'
         },
         {
             "title": 'QUATTRO',
@@ -14,7 +14,7 @@ export default function markersFromPrevSite() {
             "lng": '29.140169861609266',
             "category": "quattro",
             "icon": '/wp-content/uploads/2023/04/pin-quattro.svg',
-            "description": '<a href="https://quattroistanbul.com/" target="_blank"><img  width="100%" data-src="/wp-content/uploads/2023/04/quattro-popup.png" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img src="/wp-content/uploads/2023/04/quattro-popup.png" width="100%" /></noscript></a>'
+            "description": '<a style="text-decoration:none; color: rgba(122,144,73,1); font-weight: bold" href="https://quattroistanbul.com/" target="_blank">RAMS QUATTRO</a>'
         },
         {
             "title": 'RAMS CITY',
@@ -22,7 +22,7 @@ export default function markersFromPrevSite() {
             "lat": '41.03242882031709',
             "lng": '28.92361763956377',
             "icon": '/wp-content/uploads/2023/04/pin-rams-city.svg',
-            "description": '<a href="http://ramscityhalic.com/" target="_blank">Ramscityhalic</a>'
+            "description": '<a style="text-decoration:none; color: rgba(122,144,73,1); font-weight: bold" href="http://ramscityhalic.com/" target="_blank">Ramscityhalic</a>'
         },
         {
             "title": 'Bayramoğlu',
@@ -30,7 +30,7 @@ export default function markersFromPrevSite() {
             "lng": '29.355193243605775',
             "category": "bayramoglu",
             "icon": '/wp-content/uploads/2023/04/pin-bayramoglu.svg',
-            "description": '<a href="https://ramsturkiye.com.tr/" target="_blank">Bayramoğlu</a>'
+            "description": '<a style="text-decoration:none; color: rgba(122,144,73,1); font-weight: bold" href="https://ramsturkiye.com.tr/" target="_blank">Bayramoğlu</a>'
         },
         {
             "title": "Marmara Forum",
