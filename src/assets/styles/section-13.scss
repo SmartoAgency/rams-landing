@@ -138,6 +138,7 @@
         &__info-group {
             &>:nth-child(2) {
                 margin-top: 8px;
+                min-height: calc(24px * 1.4);
             }
             .delimiter {
                 margin-top: 13px;
