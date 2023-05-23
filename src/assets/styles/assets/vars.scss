@@ -1,4 +1,4 @@
-$default-font: "Golos",
+$default-font: "Arial",
 sans-serif;
 $default-font2: "montser",
 sans-serif;
@@ -109,11 +109,11 @@ $color-gray-light: rgba(210,210,211,1);
 
 .text-style-h-1 {
 	font-size: 3vw;
-	font-family: "Golos", sans-serif;
+	font-family: "Arial", sans-serif;
 	font-weight: 400;
 	font-style: normal;
 	line-height: 120%;
-	letter-spacing: -0.03em;
+	// letter-spacing: -0.03em;
 	text-decoration: none;
 	text-transform: none;
 }
@@ -122,11 +122,11 @@ $color-gray-light: rgba(210,210,211,1);
 
 .text-style-h-1-important {
 	font-size: 3vw !important;
-	font-family: "Golos", sans-serif !important;
+	font-family: "Arial", sans-serif !important;
 	font-weight: 400 !important;
 	font-style: normal !important;
 	line-height: 120% !important;
-	letter-spacing: -0.03em !important;
+	// letter-spacing: -0.03em !important;
 	text-decoration: none !important;
 	text-transform: none !important;
 }
@@ -141,11 +141,11 @@ $color-gray-light: rgba(210,210,211,1);
 }
 .text-style-h-3 {
 	font-size: 2.08vw;
-	font-family: "Golos", sans-serif;
+	font-family: "Arial", sans-serif;
 	font-weight: 400;
 	font-style: normal;
 	line-height: 120%;
-	letter-spacing: -0.03em;
+	// letter-spacing: -0.03em;
 	text-decoration: none;
 	text-transform: none;
 }
@@ -153,11 +153,11 @@ $color-gray-light: rgba(210,210,211,1);
 
 .text-style-h-3-important {
 	font-size: 2.08vw !important;
-	font-family: "Golos", sans-serif !important;
+	font-family: "Arial", sans-serif !important;
 	font-weight: 400 !important;
 	font-style: normal !important;
 	line-height: 120% !important;
-	letter-spacing: -0.03em !important;
+	// letter-spacing: -0.03em !important;
 	text-decoration: none !important;
 	text-transform: none !important;
 }
@@ -172,11 +172,11 @@ $color-gray-light: rgba(210,210,211,1);
 
 .text-style-h-4 {
 	font-size: 1.04vw;
-	font-family: "Golos", sans-serif;
+	font-family: "Arial", sans-serif;
 	font-weight: 400;
 	font-style: normal;
 	line-height: 140%;
-	letter-spacing: -0.03em;
+	// letter-spacing: -0.03em;
 	text-decoration: none;
 	text-transform: none;
 }
@@ -185,11 +185,11 @@ $color-gray-light: rgba(210,210,211,1);
 
 .text-style-h-4-important {
 	font-size: 1.04vw !important; 
-	font-family: "Golos", sans-serif !important; 
+	font-family: "Arial", sans-serif !important; 
 	font-weight: 400 !important; 
 	font-style: normal !important; 
 	line-height: 140% !important; 
-	letter-spacing: -0.03em !important; 
+	// letter-spacing: -0.03em !important; 
 	text-decoration: none !important; 
 	text-transform: none !important; 
 }
@@ -204,28 +204,28 @@ $color-gray-light: rgba(210,210,211,1);
 
 .text-style-body {
 	font-size: 0.83vw;
-	font-family: "Golos", sans-serif;
+	font-family: "Arial", sans-serif;
 	font-weight: 400;
 	font-style: normal;
 	line-height: 140%;
-	letter-spacing: -0.03em;
+	// letter-spacing: -0.03em;
 	text-decoration: none;
 	text-transform: none;
 }
 .text-style-body-important {
 	font-size: 0.83vw !important;
-	font-family: "Golos", sans-serif !important;
+	font-family: "Arial", sans-serif !important;
 	font-weight: 400 !important;
 	font-style: normal !important;
 	line-height: 140% !important;
-	letter-spacing: -0.03em !important;
+	// letter-spacing: -0.03em !important;
 	text-decoration: none !important;
 	text-transform: none !important;
 }
 
 @mixin text-style-h-1() {
 	font-size: 3vw;
-	font-family: "Golos", sans-serif;
+	font-family: "Arial", sans-serif;
 	font-weight: 400;
 	font-style: normal;
 	line-height: 120%;
@@ -235,7 +235,7 @@ $color-gray-light: rgba(210,210,211,1);
 }
 @mixin text-style-h-3() {
 	font-size: 2.08vw;
-	font-family: "Golos", sans-serif;
+	font-family: "Arial", sans-serif;
 	font-weight: 400;
 	font-style: normal;
 	line-height: 120%;
@@ -245,7 +245,7 @@ $color-gray-light: rgba(210,210,211,1);
 }
 @mixin text-style-h-4() {
 	font-size: 1.04vw;
-	font-family: "Golos", sans-serif;
+	font-family: "Arial", sans-serif;
 	font-weight: 400;
 	font-style: normal;
 	line-height: 140%;
@@ -255,7 +255,7 @@ $color-gray-light: rgba(210,210,211,1);
 }
 @mixin text-style-body() {
 	font-size: 0.83vw;
-	font-family: "Golos", sans-serif;
+	font-family: "Arial", sans-serif;
 	font-weight: 400;
 	font-style: normal;
 	line-height: 140%;
