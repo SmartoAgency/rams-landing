@@ -1,6 +1,22 @@
 section.section-13#section13
     .section-13__left
         .text-style-h-1.text-black Rams Hakkında
+        .section-13__left-full
+            include ./world-map.svg
+        .section-13__left-full
+            .df.fdc
+                button(type="button" data-world-map-marker="Almanya").button-tiny Almanya
+                button(type="button" data-world-map-marker="Moskova").button-tiny Moskova
+                button(type="button" data-world-map-marker="Kazakistan").button-tiny Kazakistan
+                button(type="button" data-world-map-marker="Türkiye").button-tiny Türkiye
+                button(type="button" data-world-map-marker="Dubai").button-tiny Dubai
+                button(type="button" data-world-map-marker="Tayland").button-tiny Tayland
+        .section-13__left-logos
+            a(href="https://ramsturkiye.com.tr/" target='_blank').logo
+                +img('ramsturkiye-logo-1.svg').logo
+            a(href="https://rams-global.com/" target='_blank').logo
+                +img('Rams-Global-Logo.svg').logo
+            //- .df.fdc
     +responsiveImage([
         './assets/images/sec13/sec13image.jpg 1920',
         './assets/images/sec13/sec13image@075x.jpg 1240',
@@ -40,20 +56,20 @@ section.section-13#section13
             .section-13__info-group
                 div.text-style-h-3.text-gray 8
                 div.text-style-h-4.text-gray-body Farklı sektörde faaliyet
-        .section-13__right-full
-            .delimiter
-        .section-13__right-half.section-13__right-mobile-full
-            include ./world-map.svg
-        .section-13__right-half-bottom
-            .df.fdc
-                button(type="button" data-world-map-marker="Almanya").button-tiny Almanya
-                button(type="button" data-world-map-marker="Moskova").button-tiny Moskova
-                button(type="button" data-world-map-marker="Kazakistan").button-tiny Kazakistan
-                button(type="button" data-world-map-marker="Türkiye").button-tiny Türkiye
-                button(type="button" data-world-map-marker="Dubai").button-tiny Dubai
-                button(type="button" data-world-map-marker="Tayland").button-tiny Tayland
-            .df.fdc
-                a(href="https://ramsturkiye.com.tr/" target='_blank').logo
-                    +img('ramsturkiye-logo-1.svg').logo
-                a(href="https://rams-global.com/" target='_blank').logo
-                    +img('Rams-Global-logo.png').logo
+        //- .section-13__right-full
+        //-     .delimiter
+        //- .section-13__right-half.section-13__right-mobile-full
+        //-     include ./world-map.svg
+        //- .section-13__right-half-bottom
+        //-     .df.fdc
+        //-         button(type="button" data-world-map-marker="Almanya").button-tiny Almanya
+        //-         button(type="button" data-world-map-marker="Moskova").button-tiny Moskova
+        //-         button(type="button" data-world-map-marker="Kazakistan").button-tiny Kazakistan
+        //-         button(type="button" data-world-map-marker="Türkiye").button-tiny Türkiye
+        //-         button(type="button" data-world-map-marker="Dubai").button-tiny Dubai
+        //-         button(type="button" data-world-map-marker="Tayland").button-tiny Tayland
+        //-     .df.fdc
+        //-         a(href="https://ramsturkiye.com.tr/" target='_blank').logo
+        //-             +img('ramsturkiye-logo-1.svg').logo
+        //-         a(href="https://rams-global.com/" target='_blank').logo
+        //-             +img('Rams-Global-logo.svg').logo

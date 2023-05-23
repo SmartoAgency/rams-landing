@@ -18,7 +18,31 @@
     &__left {
         @include size(11);
         @include shift(0);
-        @include shift-padding-right(3);
+        .world-map {
+            width: 80%;
+            height: auto;
+        }
+        // @include shift-padding-right(3);
+        &>:nth-child(n+2) {
+            margin-top: 10px;
+        }
+        &-full {
+            @include size(24);
+            @include shift(0);
+        }
+        &-logos {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            &>* {
+                width: 145px;
+                height: auto;
+            }
+            &>:nth-child(n+2) {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
     }
     &__right {
         @include size(13);
@@ -103,9 +127,11 @@
         @include row-flex;
         
         .section-13__left {
-            position: absolute;
+            position: static;
             top: calc(var(--page-side-fields));
             left: var(--page-side-fields);
+            margin-bottom: var(--page-side-fields);
+
             
         }
 
@@ -123,6 +149,7 @@
             @include shift(0);
             padding-left: 0;
             padding-right: 0;
+            
         }
         &__right {
             @include size(24);

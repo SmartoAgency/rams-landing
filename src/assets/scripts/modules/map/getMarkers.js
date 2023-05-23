@@ -135,11 +135,11 @@ function mockData() {
             ]
         },
         {
-            "name": "Rams Global",
+            "name": "Rams Türkiye",
             "code": "office",
             "list": [
                 {
-                    "name": "<a style='text-decoration:none; color: rgba(122,144,73,1); font-weight: bold' href='https://rams-global.com/' target='_blank'>Rams Global</a>",
+                    "name": "<a style='text-decoration:none; color: rgba(122,144,73,1); font-weight: bold' href='https://rams-global.com/' target='_blank'>Rams Türkiye</a>",
                     "id": "10",
                     "coordinations": {
                         "latitude": "40.997902",
