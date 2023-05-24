@@ -78,7 +78,7 @@ const renderForm = (form, elements, toast) => {
       toast.addToast({
         type: 'error',
         text: i18next.t(form.serverError),
-        title: 'Сталася помилка',
+        title: 'Bir hata oluştu',
       });
       elementsParamFn.$btnSubmit.removeAttribute('disabled');
       elementsParamFn.$btnSubmit.querySelector('[data-btn-submit-text]').innerHTML = i18next.t(
@@ -97,6 +97,7 @@ const initView = (state, elementsParamFn) => {
     $wrap: document.querySelector('[data-toast-wrapper]'),
   });
 
+  // window.toast = toast;
   const mapping = {
     status: () => renderForm(state, elementsParamFn, toast),
   };

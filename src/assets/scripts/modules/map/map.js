@@ -9,10 +9,10 @@ export default function googleMap() {
 
 async function func() {
   const script = document.createElement('script');
-  let key = '';
-  if (window.location.href.match(/localhost|smarto/)) key = '';
+  let key = document.documentElement.dataset.key ? document.documentElement.dataset.key : '';
+  // if (window.location.href.match(/localhost|smarto/)) key = '';
   // const key = '';
-  script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`;
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap&language=${document.documentElement.getAttribute('lang')}`;
   document.getElementsByTagName('head')[0].appendChild(script);
 }
 // setTimeout(func, 1000);
@@ -62,7 +62,8 @@ function initMap() {
     scaleControl: false,
     draggable: true,
     gestureHandling: 'cooperative',
-    language: 'en',
+    mapTypeId: 'satellite',
+    language: document.documentElement.getAttribute('lang') || 'en',
     styles: mapStyle()
   });
   window.googleMap = map;

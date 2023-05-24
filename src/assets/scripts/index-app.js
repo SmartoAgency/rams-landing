@@ -53,8 +53,7 @@ forms.forEach((form) => {
       /* eslint-enable */
       elements: {
         $form,
-        showSuccessMessage: false,
-        successAction: () => { window.location.href = 'message'; },
+        showSuccessMessage: true,
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
         fields: {
           name: {

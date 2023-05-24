@@ -58,6 +58,9 @@
 		&:hover .button__hover {
 			transform: translate(-50%,-50%) scale(1.2) !important;
 		}
+    &.safari:hover {
+      background-color: var(--color-black);
+    }
 	}
   span {
       @include text-style-h-4;

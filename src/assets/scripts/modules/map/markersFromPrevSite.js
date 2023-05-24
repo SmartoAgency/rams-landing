@@ -22,7 +22,7 @@ export default function markersFromPrevSite() {
             "lat": '41.03242882031709',
             "lng": '28.92361763956377',
             "icon": '/wp-content/uploads/2023/04/pin-rams-city.svg',
-            "description": '<a style="text-decoration:none; color: rgba(122,144,73,1); font-weight: bold" href="http://ramscityhalic.com/" target="_blank">Ramscityhalic</a>'
+            "description": '<a style="text-decoration:none; color: rgba(122,144,73,1); font-weight: bold" href="http://ramscityhalic.com/" target="_blank">Rams City Haliç</a>'
         },
         {
             "title": 'Bayramoğlu',
