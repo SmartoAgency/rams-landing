@@ -34,7 +34,7 @@
 		}
 	}
 
-  &>svg {
+  &>:first-child {
     margin-right: auto;
   }
 	@include from-to(1025px, 1360px){
@@ -342,6 +342,13 @@
 .mobile,
 .tablet {
 	.header {
+		&>:first-child {
+			width: 100px;
+			svg {
+				width: 100%;
+				height: auto;
+			}
+		}
 		.header__menu {
 			font-size: 16px;
 			svg {

@@ -53,7 +53,7 @@ forms.forEach((form) => {
       /* eslint-enable */
       elements: {
         $form,
-        showSuccessMessage: true,
+        successAction: 'toster',
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
         fields: {
           name: {

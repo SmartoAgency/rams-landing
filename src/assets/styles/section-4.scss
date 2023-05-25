@@ -54,6 +54,7 @@
 .genplan-svg {
     [data-build] {
         animation: stroke-pulsation 1.6s infinite cubic-bezier(0, 0, 0.12, 1.02);
+        stroke: var(--color-green);
     }
     @keyframes stroke-pulsation {
         0% {

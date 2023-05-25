@@ -40,11 +40,13 @@ export async function fetchMarkersData(google) {
     const url = window.location.href.match(/localhost/)
       ? 'https://central-park-wp.smarto.com.ua/wp-admin/admin-ajax.php'
       : '/wp-admin/admin-ajax.php'
-    let markersData = window.location.href.match(/localhost|smarto/) ? Promise.resolve(mockData()) : await fetch(url, {
-      method: 'POST',
-      body: sendData,
-    });
-    markersData = window.location.href.match(/localhost|smarto/) ? mockData() : await markersData.json();
+    // let markersData = window.location.href.match(/localhost|smarto/) ? Promise.resolve(mockData()) : await fetch(url, {
+    //   method: 'POST',
+    //   body: sendData,
+    // });
+    let markersData = Promise.resolve(mockData());
+    // markersData = window.location.href.match(/localhost|smarto/) ? mockData() : await markersData.json();
+    markersData = mockData();
     if (!markersData) {
       console.warn('Wrong data recieved');
       return;
