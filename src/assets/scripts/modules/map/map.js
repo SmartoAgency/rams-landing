@@ -44,13 +44,12 @@ function initMap() {
   const gmarkers1 = [];
   //28.4600074, 49.2384203
   const center = {
-    lat: 40.997902,
-    lng: 29.098045,
+    lat: 41.0074626,
+    lng: 28.8806902,
   };
   /** Массив, куда записываются выбраные категории */
   const choosedCategories = new Set();
   choosedCategories.add('main');
-  choosedCategories.add('office');
   /** Елементы, при клике на который будет происходить фильтрация */
   const filterItems = document.querySelectorAll('[data-marker]');
   const map = new google.maps.Map(document.getElementById('map'), {
@@ -62,7 +61,6 @@ function initMap() {
     scaleControl: false,
     draggable: true,
     gestureHandling: 'cooperative',
-    mapTypeId: 'satellite',
     language: document.documentElement.getAttribute('lang') || 'en',
     styles: mapStyle()
   });
@@ -116,7 +114,7 @@ function initMap() {
 
   const filterMarkers = function (category, categoriesArray) {
     gmarkers1.forEach((el) => {
-      if (categoriesArray.has(el.category) || categoriesArray.size === 2) {
+      if (categoriesArray.has(el.category)) {
         el.setMap(map);
         el.setAnimation(google.maps.Animation.DROP);
       } else {
@@ -130,12 +128,21 @@ function initMap() {
       item.classList.toggle('active');
       if (item.classList.contains('active')) {
         choosedCategories.add(item.dataset.category);
+        if (item.dataset.multicategory) {
+          const innerCategories = item.dataset.multicategory.split('~');
+          innerCategories.forEach(el => choosedCategories.add(el));
+        }
       } else {
         choosedCategories.delete(item.dataset.category);
+        if (item.dataset.multicategory) {
+          const innerCategories = item.dataset.multicategory.split('~');
+          innerCategories.forEach(el => choosedCategories.delete(el));
+        }
       }
       filterMarkers('main', choosedCategories);
     });
   });
+
 
   // var baseFolder = '/wp-content/themes/centower/assets/images/markers/';
   const baseFolder = window.location.href.match(/localhost/) 
@@ -260,6 +267,7 @@ function initMap() {
     });
     map.initedMarkers = initedMarkers;
     console.log(map);
+    filterMarkers('main', choosedCategories);
     markersHightlight(google, map, infowindow);
     // markersHandler();
   }

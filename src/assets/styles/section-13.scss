@@ -150,6 +150,15 @@
             @include shift(0);
             padding-left: 0;
             padding-right: 0;
+            .world-map {
+                width: 100%;
+                height: auto;
+            }
+            &-full>.df {
+                display: grid;
+                grid-template-columns: repeat(2,2fr);
+                gap: 4px;
+            }
             
         }
         &__right {

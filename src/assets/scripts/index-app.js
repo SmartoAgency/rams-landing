@@ -53,13 +53,20 @@ forms.forEach((form) => {
       /* eslint-enable */
       elements: {
         $form,
-        successAction: 'toster',
+        successAction: () => { window.location.href = 'thankyou'; },
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
         fields: {
           name: {
             inputWrapper: new SexyInput({ animation: 'none', $field: $form.querySelector('[data-field-name]') }),
             rule: yup.string().required(i18next.t('required')).trim(),
             defaultMessage: i18next.t('name'),
+            valid: false,
+            error: [],
+          },
+          email: {
+            inputWrapper: new SexyInput({ animation: 'none', $field: $form.querySelector('[data-field-email]') }),
+            rule: yup.string().required(i18next.t('required')).trim(),
+            defaultMessage: i18next.t('email'),
             valid: false,
             error: [],
           },
@@ -287,7 +294,7 @@ function screen3Effects() {
 
 screen3Effects();
 
-new Accordion('.accordion-container');
+
 
 
 document.body.addEventListener('click',function(evt){
@@ -550,4 +557,7 @@ document.querySelectorAll('.web-item').forEach(item => {
   }, {
     once: true
   })
-})
+});
+
+
+new Accordion('.accordion-container');

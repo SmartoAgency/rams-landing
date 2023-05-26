@@ -76,14 +76,14 @@
             
         }
         &>:nth-child(3) {
-            @include size(12);
+            @include size(24);
             @include shift(0);
             // &>:nth-child(n+2) {
             //     margin-top: 32px;
             // }
         }
         &>:nth-child(2) {
-            @include size(12);
+            @include size(24);
             @include shift-right(0);
             @include shift-left(0);
             // &>:nth-child(n+2) {
