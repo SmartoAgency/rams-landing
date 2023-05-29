@@ -30,11 +30,11 @@ global.axios = axios;
 gsap.registerPlugin(ScrollTrigger);
 
 
-var myElement = document.querySelector("header");
-// construct an instance of Headroom, passing the element
-var headroom  = new Headroom(myElement);
+// var myElement = document.querySelector("header");
+// // construct an instance of Headroom, passing the element
+// var headroom  = new Headroom(myElement);
 // initialise
-headroom.init();
+// headroom.init();
 
 
 /*
@@ -315,6 +315,12 @@ document.body.addEventListener('click',function(evt){
 });
 
 
+
+document.querySelector('[data-up-arrow]').style.visibility = 'hidden';
+
+window.addEventListener('scroll', (evt) => {
+  document.querySelector('[data-up-arrow]').style.visibility  = window.scrollY > (document.body.scrollHeight * 0.5) ? '' : 'hidden';
+})
 
 function worldMapHandler() {
   document.querySelectorAll('button[data-world-map-marker]').forEach(el => {

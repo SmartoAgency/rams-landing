@@ -336,6 +336,22 @@
 }
 [data-up-arrow] {
 	cursor: pointer;
+	position: fixed;
+	right: var(--page-side-fields);
+	bottom: var(--page-side-fields);
+	background-color: var(--color-white);
+	z-index: 4;
+	border-radius: 50%;
+	overflow: hidden;
+
+}
+
+.mobile,
+.tablet {
+	[data-up-arrow] {
+		width: 40px;
+		height: 40px;
+	}
 }
 
 
