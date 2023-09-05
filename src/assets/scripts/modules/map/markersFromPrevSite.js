@@ -25,12 +25,12 @@ export default function markersFromPrevSite() {
             "description": '<a style="text-decoration:none; color: rgba(122,144,73,1); font-weight: bold" href="http://ramscityhalic.com/" target="_blank">Rams City Haliç</a>'
         },
         {
-            "title": 'Bayramoğlu',
+            "title": 'RAMS Denizkent Bayramoğlu',
             "lat": '40.79864457037738',
             "lng": '29.355193243605775',
             "category": "bayramoglu",
             "icon": '/wp-content/uploads/2023/04/pin-bayramoglu.svg',
-            "description": '<a style="text-decoration:none; color: rgba(122,144,73,1); font-weight: bold" href="https://ramsturkiye.com.tr/" target="_blank">Bayramoğlu</a>'
+            "description": '<a style="text-decoration:none; color: rgba(122,144,73,1); font-weight: bold" href="https://ramsdenizkent.com/" target="_blank">RAMS Denizkent Bayramoğlu</a>'
         },
         {
             "title": "Marmara Forum",

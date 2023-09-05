@@ -144,8 +144,10 @@ function mockData() {
                     "name": "<a style='text-decoration:none; color: rgba(122,144,73,1); font-weight: bold' href='https://rams-global.com/' target='_blank'>Rams Türkiye</a>",
                     "id": "10",
                     "coordinations": {
-                        "latitude": "40.997902",
-                        "elevation": "29.098045"
+                        // "latitude": "40.997902",
+                        // "elevation": "29.098045"
+                        "latitude": "41.1597705",
+                        "elevation": "29.04259"
                     }
                 }
             ]

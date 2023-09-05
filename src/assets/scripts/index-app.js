@@ -492,7 +492,7 @@ document.body.addEventListener('click',function(evt){
 buttonHover('.button-30');
 
 
-splitToLinesAndFadeUp('section:not(.section-1) .text-style-h-1, section  .text-style-h-3');
+splitToLinesAndFadeUp('section:not(.section-1):not(.section-7):not(.section-10) .text-style-h-1, section  .text-style-h-3');
 
 
 

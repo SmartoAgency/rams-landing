@@ -3,6 +3,25 @@
     padding-left: var(--page-side-fields);
     padding-right: var(--page-side-fields);
     padding-bottom: var(--section-v-offset);
+
+    .text-style-h-1 {
+        display: flex;
+        align-items: center;
+        [data-screen3-prev] {
+            transform-origin: center;
+            transform-box: fill-box;
+            transform: rotate(180deg);
+        }
+        svg {
+            cursor: pointer;
+        }
+        svg~svg {
+            margin-left: 16px;
+        }
+        span {
+            flex-grow: 1;
+        }
+    }
     .screen3 {
         margin-top: 50px;
     }
